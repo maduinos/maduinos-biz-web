@@ -10,9 +10,9 @@
 - `favicon.ico`: 브라우저 탭용 MADUINOS 아이콘
 - `assets/favicon-32.png`: PNG favicon
 - `assets/apple-touch-icon.png`: iOS 홈 화면용 아이콘
-- `assets/profile-github.png`: GitHub 프로필 업로드용 정사각 이미지
-- `assets/profile-youtube.png`: YouTube 프로필 업로드용 정사각 이미지
-- `assets/profile-icon.png`: 작은 원형 표시용 아이콘 중심 프로필 이미지
+- `assets/profile-github.png`: GitHub 프로필 업로드용 아이콘 전용 정사각 이미지
+- `assets/profile-youtube.png`: YouTube 프로필 업로드용 아이콘 전용 정사각 이미지
+- `assets/profile-icon.png`: 작은 원형 표시용 아이콘 전용 프로필 이미지
 - `assets/maduinos-biz.css`: 공통 스타일
 - `assets/maduinos_wordmark.png`: MADUINOS 워드마크
 - `assets/hero-edge-ai-fpga.png`: ZM4 FPGA SoM 기반 Edge AI PoC hero 이미지

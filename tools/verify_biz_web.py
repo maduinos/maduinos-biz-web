@@ -147,6 +147,24 @@ def png_size(path: str) -> tuple[int, int]:
     return int.from_bytes(data[16:20], "big"), int.from_bytes(data[20:24], "big")
 
 
+def ensure_icon_only_profiles() -> None:
+    try:
+        from PIL import Image
+    except ImportError:
+        fail("Pillow is required to verify profile image composition")
+
+    canonical = Image.open(ROOT / "assets/profile-icon.png").convert("RGBA")
+    github = Image.open(ROOT / "assets/profile-github.png").convert("RGBA")
+    youtube = Image.open(ROOT / "assets/profile-youtube.png").convert("RGBA")
+    expected_youtube = canonical.resize((800, 800), Image.Resampling.LANCZOS)
+
+    if list(github.getdata()) != list(canonical.getdata()):
+        fail("assets/profile-github.png should match the icon-only profile image")
+
+    if list(youtube.getdata()) != list(expected_youtube.getdata()):
+        fail("assets/profile-youtube.png should be a resized icon-only profile image")
+
+
 def check_brand_icons(files: list[Path]) -> None:
     expected_sizes = {
         "assets/favicon-32.png": (32, 32),
@@ -159,6 +177,8 @@ def check_brand_icons(files: list[Path]) -> None:
         actual = png_size(path)
         if actual != expected:
             fail(f"{path} should be {expected[0]}x{expected[1]}, got {actual[0]}x{actual[1]}")
+
+    ensure_icon_only_profiles()
 
     ico = (ROOT / "favicon.ico").read_bytes()
     if ico[:4] != b"\x00\x00\x01\x00":
