@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import hashlib
 import re
 import sys
 import urllib.parse
@@ -10,6 +11,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CONTACT_EMAIL = "whjeong@maduinos.com"
 CUSTOM_DOMAIN = "biz.maduinos.com"
+PROFILE_IMAGE_SHA256 = {
+    "assets/profile-icon.png": "b5cc4bdd49dc62f09faed8c446b81801a36ee6b703d29734c2bc14d7639f07c0",
+    "assets/profile-github.png": "b5cc4bdd49dc62f09faed8c446b81801a36ee6b703d29734c2bc14d7639f07c0",
+    "assets/profile-youtube.png": "c596e8cf9e7eaa86fd10c465c99b77cbed13132433935823a748edfe54e2156f",
+}
 
 
 REQUIRED_FILES = [
@@ -148,21 +154,10 @@ def png_size(path: str) -> tuple[int, int]:
 
 
 def ensure_icon_only_profiles() -> None:
-    try:
-        from PIL import Image
-    except ImportError:
-        fail("Pillow is required to verify profile image composition")
-
-    canonical = Image.open(ROOT / "assets/profile-icon.png").convert("RGBA")
-    github = Image.open(ROOT / "assets/profile-github.png").convert("RGBA")
-    youtube = Image.open(ROOT / "assets/profile-youtube.png").convert("RGBA")
-    expected_youtube = canonical.resize((800, 800), Image.Resampling.LANCZOS)
-
-    if list(github.getdata()) != list(canonical.getdata()):
-        fail("assets/profile-github.png should match the icon-only profile image")
-
-    if list(youtube.getdata()) != list(expected_youtube.getdata()):
-        fail("assets/profile-youtube.png should be a resized icon-only profile image")
+    for path, expected_digest in PROFILE_IMAGE_SHA256.items():
+        digest = hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
+        if digest != expected_digest:
+            fail(f"{path} should be the approved icon-only profile image")
 
 
 def check_brand_icons(files: list[Path]) -> None:
