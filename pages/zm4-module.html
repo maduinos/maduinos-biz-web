@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MADUINOS | ZM4 FPGA SoM</title>
+  <link rel="stylesheet" href="../assets/maduinos-biz.css">
+</head>
+<body>
+  <header class="detail-hero detail-hero-media">
+    <div class="shell detail-hero-grid">
+      <div>
+        <a class="back-link" href="../index.html">MADUINOS</a>
+        <p class="eyebrow">ZM4 FPGA SoM</p>
+        <h1>
+          <span class="keep">검증된 FPGA SoM 모듈</span><br>
+          <span class="keep">ZM4로</span><br>
+          <span class="keep">제품 PoC를 빠르게 시작합니다.</span>
+        </h1>
+        <p class="lead">
+          ZM4는 센서 입력, AMD Zynq 칩 기반 FPGA 처리, firmware, host tool을 빠르게 연결하기 위한
+          FPGA SoM 모듈입니다. 검증된 보드와 MADUINOS 지원을 함께 제공해
+          첫 데이터 취득부터 양산 적용 검토까지 이어지도록 설계합니다.
+        </p>
+      </div>
+      <div class="image-frame">
+        <img src="../assets/zm4-fpga-som-module.png" alt="ZM4 FPGA SoM module render with AMD Zynq processing core">
+      </div>
+    </div>
+  </header>
+
+  <main class="detail-main">
+    <section class="detail-section">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Product Role</p>
+          <h2>ZM4가 맡는 역할</h2>
+          <p>
+            ZM4는 단독 개발 보드가 아니라 고객 센서, carrier, host tool, 검증 로그를 묶어
+            FPGA 기반 임베디드 제품 PoC를 빠르게 시작하게 하는 기준 FPGA SoM입니다.
+          </p>
+        </div>
+        <div class="diagram module-diagram" aria-label="ZM4 FPGA SoM and product carrier concept">
+          <div class="flow-node"><strong>Sensor Board</strong><span>camera · CIS · TDC · ultrasonic</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="diagram-core module-core"><strong>ZM4 FPGA SoM</strong><span>AMD Zynq · PL capture · PS firmware</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><strong>Verified Carrier</strong><span>power · I/O · debug · expansion</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><strong>Production Review</strong><span>log · report · interface scope</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section alt">
+      <div class="shell split-media">
+        <div class="image-frame">
+          <img src="../assets/edge-ai-carrier-lab.png" alt="ZM4 FPGA SoM installed on verified carrier board with camera and sensor">
+        </div>
+        <div>
+          <p class="eyebrow">Verified Board Package</p>
+          <h2>검증된 보드에서 바로 시작합니다.</h2>
+          <p>
+            MADUINOS는 ZM4 bring-up에 필요한 quick-start, host CLI, test procedure,
+            sensor data path 예제를 함께 제공합니다. 고객은 처음부터 power, boot, register access,
+            first data 확인에 시간을 빼앗기지 않고 제품 기능 검증에 집중할 수 있습니다.
+          </p>
+          <div class="spec-list">
+            <div><strong>ZM4 FPGA SoM</strong><span>AMD Zynq, memory, boot/debug, PL/PS data path</span></div>
+            <div><strong>Verified Carrier</strong><span>camera, timing input, GPIO, power, test point</span></div>
+            <div><strong>MADUINOS Support</strong><span>quick-start, bring-up guide, host tool, validation log</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Processor / Data Path</p>
+          <h2>센서 데이터 처리 구조</h2>
+          <p>
+            ZM4는 raw sensor 입력을 FPGA fabric에서 안정적으로 잡고, firmware와 host tool이
+            재현 가능한 로그로 확인할 수 있는 구조를 목표로 합니다.
+          </p>
+        </div>
+        <div class="diagram flow-diagram wide" aria-label="ZM4 sensor data processing flow">
+          <div class="flow-node"><strong>Sensor I/O</strong><span>camera, CIS, timing pulse</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><strong>PL Capture</strong><span>timestamp, line buffer, trigger</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><strong>Buffer / DMA</strong><span>frame, line, event packet</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><strong>PS Firmware</strong><span>register, self-test, control</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><strong>Host Tool</strong><span>CSV, log, viewer, report</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section alt">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Target Specification</p>
+          <h2>상세 스펙은 검증된 항목부터 공개합니다.</h2>
+        </div>
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead><tr><th>항목</th><th>목표 방향</th><th>적용 방식</th></tr></thead>
+            <tbody>
+              <tr><td>Module role</td><td>sensor/AI/TDC PoC용 FPGA SoM 모듈</td><td>검증된 보드와 carrier 기준으로 quick-start 제공</td></tr>
+              <tr><td>Core processing</td><td>AMD Zynq 칩 기반 PL capture와 PS firmware</td><td>register map, self-test, host control 예제로 확인</td></tr>
+              <tr><td>Carrier 적용</td><td>제품 조건에 맞춘 power, I/O, debug, sensor interface 연결</td><td>고객 PoC 조건에 맞춰 carrier와 interface 범위 정의</td></tr>
+              <tr><td>Sensor expansion</td><td>camera, CIS, TDC, ultrasonic, GPIO, trigger input 후보</td><td>지원 항목은 MADUINOS 검증 로그 기준으로 공개</td></tr>
+              <tr><td>Production path</td><td>PoC 결과를 양산 적용 범위와 다음 개발 계획으로 정리</td><td>custom carrier, firmware, test fixture 전환 범위 제안</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Production Application</p>
+          <h2>PoC에서 양산 적용 검토까지 같은 흐름으로 이어갑니다.</h2>
+        </div>
+        <div class="process-list">
+          <div class="process-item"><div><h3>1. Quick Start</h3><p>검증된 보드에서 boot, JTAG, UART, register access, host tool을 확인합니다.</p></div></div>
+          <div class="process-item"><div><h3>2. First Sensor Data</h3><p>고객 센서 입력을 ZM4 FPGA SoM data path에 연결하고 재현 가능한 로그를 남깁니다.</p></div></div>
+          <div class="process-item"><div><h3>3. Carrier Definition</h3><p>제품 조건에 맞는 connector, power, test point, mechanical 조건을 carrier 적용 범위로 정의합니다.</p></div></div>
+          <div class="process-item"><div><h3>4. Production Review</h3><p>PoC 결과, 리스크, 양산 적용 항목, 다음 개발 범위를 제품화 판단 자료로 정리합니다.</p></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
