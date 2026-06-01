@@ -160,6 +160,17 @@ def ensure_icon_only_profiles() -> None:
             fail(f"{path} should be the approved icon-only profile image")
 
 
+def ensure_large_favicon_face() -> None:
+    data = (ROOT / "assets/favicon-32.png").read_bytes()
+    # The face-only favicon should occupy enough of the 32px canvas to stay legible.
+    # Minimal PNG parsing is intentionally avoided here; the approved asset hash
+    # covers composition while png_size covers dimensions.
+    digest = hashlib.sha256(data).hexdigest()
+    expected = "9602da4ec73890c99f34088846460e36b3543148fe521afbc44e8a48ac738f89"
+    if digest != expected:
+        fail("assets/favicon-32.png should be the approved large face-only favicon")
+
+
 def check_brand_icons(files: list[Path]) -> None:
     expected_sizes = {
         "assets/favicon-32.png": (32, 32),
@@ -174,6 +185,7 @@ def check_brand_icons(files: list[Path]) -> None:
             fail(f"{path} should be {expected[0]}x{expected[1]}, got {actual[0]}x{actual[1]}")
 
     ensure_icon_only_profiles()
+    ensure_large_favicon_face()
 
     ico = (ROOT / "favicon.ico").read_bytes()
     if ico[:4] != b"\x00\x00\x01\x00":
