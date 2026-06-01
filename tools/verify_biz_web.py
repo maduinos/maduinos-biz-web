@@ -15,14 +15,20 @@ CUSTOM_DOMAIN = "biz.maduinos.com"
 REQUIRED_FILES = [
     "README.md",
     "CNAME",
+    "favicon.ico",
     "index.html",
     ".github/workflows/deploy-pages.yml",
     "assets/maduinos-biz.css",
+    "assets/apple-touch-icon.png",
+    "assets/favicon-32.png",
     "assets/hero-edge-ai-fpga.png",
     "assets/zm4-module-render.png",
     "assets/zm4-fpga-som-module.png",
     "assets/edge-ai-carrier-lab.png",
     "assets/tdc-cis-lab-system.png",
+    "assets/profile-github.png",
+    "assets/profile-youtube.png",
+    "assets/profile-icon.png",
     "pages/ai-edge-vision.html",
     "pages/fpga-education-consulting.html",
     "pages/fpga-product-poc.html",
@@ -98,7 +104,7 @@ REQUIRED_WORKFLOW_SNIPPETS = [
     "actions/upload-pages-artifact@v5.0.0",
     "actions/deploy-pages@v5.0.0",
     "python3 tools/verify_biz_web.py",
-    "cp -R assets pages index.html CNAME _site/",
+    "cp -R assets pages index.html favicon.ico CNAME _site/",
     "path: _site",
     "pages: write",
     "id-token: write",
@@ -132,6 +138,43 @@ def check_local_refs(files: list[Path]) -> None:
             target = (html_file.parent / urllib.parse.unquote(clean)).resolve()
             if not target.exists():
                 fail(f"broken local reference in {html_file.relative_to(ROOT)}: {value}")
+
+
+def png_size(path: str) -> tuple[int, int]:
+    data = (ROOT / path).read_bytes()
+    if data[:8] != b"\x89PNG\r\n\x1a\n":
+        fail(f"{path} should be a PNG file")
+    return int.from_bytes(data[16:20], "big"), int.from_bytes(data[20:24], "big")
+
+
+def check_brand_icons(files: list[Path]) -> None:
+    expected_sizes = {
+        "assets/favicon-32.png": (32, 32),
+        "assets/apple-touch-icon.png": (180, 180),
+        "assets/profile-github.png": (1024, 1024),
+        "assets/profile-youtube.png": (800, 800),
+        "assets/profile-icon.png": (1024, 1024),
+    }
+    for path, expected in expected_sizes.items():
+        actual = png_size(path)
+        if actual != expected:
+            fail(f"{path} should be {expected[0]}x{expected[1]}, got {actual[0]}x{actual[1]}")
+
+    ico = (ROOT / "favicon.ico").read_bytes()
+    if ico[:4] != b"\x00\x00\x01\x00":
+        fail("favicon.ico should be a valid ICO file")
+
+    for html_file in files:
+        relative_prefix = "../" if html_file.parent.name == "pages" else ""
+        text = html_file.read_text(encoding="utf-8")
+        required_links = [
+            f'href="{relative_prefix}favicon.ico"',
+            f'href="{relative_prefix}assets/favicon-32.png"',
+            f'href="{relative_prefix}assets/apple-touch-icon.png"',
+        ]
+        for snippet in required_links:
+            if snippet not in text:
+                fail(f"{html_file.relative_to(ROOT)} missing favicon link: {snippet}")
 
 
 def main() -> int:
@@ -272,7 +315,9 @@ def main() -> int:
         if css_snippet not in css:
             fail(f"CSS missing business overview styling: {css_snippet}")
 
-    check_local_refs(html_files())
+    files = html_files()
+    check_brand_icons(files)
+    check_local_refs(files)
 
     print("ok: maduinos-biz-web artifacts passed structural/content checks")
     return 0
