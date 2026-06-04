@@ -7,6 +7,7 @@
 사이트의 중심 메시지는 `FPGA 기반 센서 처리 기술과 ZM4 플랫폼`이다.
 
 - 메인 기술: `Camera / TDC / CIS` 센서 입력을 FPGA/Zynq 기반 `capture`, `timing`, `preprocessing` 구조로 연결한다.
+- 시각 톤: `FPGA / Embedded / Edge AI / Hardware Prototyping` 중심으로 두고, 장식보다 `data path`, 검증 로그, 산출물을 먼저 보여준다.
 - 기술 표현: 특정 완성 모듈을 과장하지 않고 `보편적인 기술 다이어그램`으로 `Sensor Input`, `FPGA Capture`, `Processing`, `Host & Validation` 흐름을 보여준다.
 - 개발 중 플랫폼: `ZM4 FPGA SoM`은 `개발 중인 ZM4 플랫폼`으로 표현한다.
 - 바로 제공 가능 범위: `FPGA/Zynq 실무 교육`, `기술 컨설팅`, `임베디드 제품 PoC`.
