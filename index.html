@@ -3,8 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MADUINOS는 Camera, TDC, CIS 센서 입력을 FPGA/Zynq 기반 capture, timing, preprocessing 구조로 연결하고, FPGA / Embedded / Edge AI / Hardware Prototyping 범위의 교육, 기술 컨설팅, 임베디드 제품 PoC를 제공합니다.">
-  <title>MADUINOS | FPGA Sensor Processing Technology</title>
+  <meta name="description" content="MADUINOS는 Camera, TDC, CIS 센서 입력을 FPGA/Zynq 기반 capture, timing, preprocessing 구조로 연결하고, 기술 진단, FPGA/Zynq 교육, 임베디드 센서 PoC를 제공합니다.">
+  <title>MADUINOS | FPGA/Zynq Sensor Processing Review and PoC</title>
+  <link rel="canonical" href="https://biz.maduinos.com/">
+  <meta property="og:title" content="MADUINOS | FPGA/Zynq 센서 처리 기술 검토와 PoC">
+  <meta property="og:description" content="Camera, TDC, CIS 센서 입력을 FPGA/Zynq data path와 검증 로그로 정리합니다. 기술 진단, 교육/컨설팅, 센서 PoC를 바로 시작합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://biz.maduinos.com/">
+  <meta property="og:image" content="https://biz.maduinos.com/assets/tdc-cis-lab-system.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -33,12 +40,12 @@
         <div class="hero-copy">
           <p class="eyebrow">FPGA / Embedded / Edge AI / Hardware Prototyping</p>
           <h1>
-            <span class="keep">FPGA 센서 처리 아키텍처와</span><br>
-            <span class="keep">ZM4 플랫폼</span>
+            <span class="keep">FPGA/Zynq 센서 처리</span><br>
+            <span class="keep">기술 검토와 PoC</span>
           </h1>
           <p class="lead">
             MADUINOS는 Camera, TDC, CIS 센서 입력을 FPGA/Zynq 기반 capture, timing, preprocessing 구조로 연결하는 기술을 개발합니다.
-            메시지는 데모 장식보다 data path, 검증 로그, 산출물 기준으로 구성합니다.
+            고객의 보드, 센서 조건, 실패 로그를 기준으로 data path와 검증 순서를 먼저 정리합니다.
             교육/컨설팅과 임베디드 제품 PoC는 지금 바로 제공하고, ZM4 FPGA SoM 기반 센서 처리 플랫폼은 개발 중입니다.
           </p>
           <div class="hero-disciplines" aria-label="MADUINOS technical focus">
@@ -47,9 +54,10 @@
             <span>Board bring-up</span>
             <span>Validation package</span>
           </div>
+          <p class="hero-note">보드 사진, 센서 모델, 현재 로그가 있으면 1차 기술 진단 범위를 빠르게 잡습니다.</p>
           <div class="hero-actions">
-            <a class="button" href="#technologies">보유 기술 보기</a>
-            <a class="button secondary" href="#available-now">바로 가능한 범위</a>
+            <a class="button" href="#contact">기술 검토 요청</a>
+            <a class="button secondary" href="#available-now">바로 가능한 서비스</a>
           </div>
         </div>
 
@@ -80,8 +88,8 @@
           </h2>
           <p>
             제품마다 센서는 달라도 반복되는 구조는 같습니다. 입력 조건을 정의하고, FPGA에서 capture와 timing을 안정화한 뒤,
-            host tool과 로그로 결과를 확인합니다. 사이트 메시지는 기능 목록보다 검증 가능한 data path를 먼저 보여주는
-            보편적인 기술 다이어그램으로 정리합니다.
+            host tool과 로그로 결과를 확인합니다. 이 흐름을 기준으로 현재 문제 위치, 검증 방법, PoC 범위를 분리합니다.
+            아래 보편적인 기술 다이어그램은 고객 센서 조건을 검토할 때 쓰는 공통 언어입니다.
           </p>
         </div>
 
@@ -125,6 +133,22 @@
             <h3>계측과 보드 브링업</h3>
             <p>power, clock/reset, JTAG, boot, UART, DDR, register access를 bring-up checklist로 분리해 원인을 좁힙니다.</p>
           </article>
+        </div>
+
+        <div class="proof-panel">
+          <div>
+            <p class="eyebrow">Sample Outputs</p>
+            <h3>샘플 산출물 기준으로 기술 범위를 맞춥니다.</h3>
+            <p>
+              문의 후에는 고객 자료를 바탕으로 어떤 수준의 문서와 로그를 남길지 먼저 합의합니다.
+              동작 영상 하나보다 재현 가능한 자료가 다음 개발 판단에 더 중요합니다.
+            </p>
+          </div>
+          <div class="proof-grid">
+            <div><strong>Target Specification</strong><span>센서, frame/event rate, latency, trigger 조건</span></div>
+            <div><strong>Architecture Note</strong><span>FPGA/Zynq data path, register map, buffer 구조</span></div>
+            <div><strong>Validation Report</strong><span>CSV log, timing capture log, risk list, next scope</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -192,6 +216,26 @@
             <a class="text-link" href="pages/fpga-product-poc.html">임베디드 제품 PoC 상세 보기</a>
           </article>
         </div>
+        <div class="package-grid" aria-label="MADUINOS service packages">
+          <article class="package-card">
+            <span>1주 기술 진단</span>
+            <h3>현재 보드와 센서 로그를 기준으로 가능성을 판단합니다.</h3>
+            <p>입력 자료: 보드 사진, 회로/핀 정보, 센서 모델, 실패 로그, 목표 성능.</p>
+            <strong>산출물: 문제 위치 가설, 검증 순서, PoC 범위, 리스크 목록.</strong>
+          </article>
+          <article class="package-card">
+            <span>1~2일 팀 교육</span>
+            <h3>FPGA/Zynq 실무 흐름을 팀 과제에 맞춥니다.</h3>
+            <p>Vivado, Vitis, PS/PL, AXI-Lite, custom IP, host CLI를 현재 개발 흐름과 연결합니다.</p>
+            <strong>산출물: 교육 자료, lab project, bring-up checklist.</strong>
+          </article>
+          <article class="package-card">
+            <span>2~4주 센서 PoC</span>
+            <h3>작은 동작 시스템으로 제품화 판단 근거를 만듭니다.</h3>
+            <p>Camera / TDC / CIS 입력을 FPGA/Zynq data path와 host tool, 로그로 검증합니다.</p>
+            <strong>산출물: prototype, CSV log, validation report, 다음 개발 범위.</strong>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -204,7 +248,7 @@
             <span class="keep">상세 페이지에서 나눠 봅니다.</span>
           </h2>
           <p>
-            기존 상세 페이지는 그대로 유지합니다. 메인에서는 전체 방향만 보여주고,
+            메인에서는 전체 방향을 압축해서 보여주고,
             Camera/TDC/CIS 기술, ZM4 플랫폼, 교육/컨설팅, 임베디드 제품 PoC는 각 상세 페이지로 연결합니다.
           </p>
         </div>
@@ -235,6 +279,14 @@
           <p>
             문의 유형을 함께 적어 주세요: 센서 처리 기술 검토, FPGA/Zynq 교육, 임베디드 제품 PoC, ZM4 플랫폼 협의.
           </p>
+          <div class="contact-prep">
+            <strong>문의 전 준비 자료</strong>
+            <ul>
+              <li>센서 모델과 목표 frame/event rate</li>
+              <li>사용 보드, FPGA/Zynq 디바이스, 연결 방식</li>
+              <li>현재 실패 로그, 파형, 캡처 이미지, 원하는 산출물</li>
+            </ul>
+          </div>
           <div class="email-line">whjeong@maduinos.com</div>
           <div class="contact-actions">
             <a class="button" href="mailto:whjeong@maduinos.com?subject=MADUINOS%20FPGA%20Sensor%20문의">메일 보내기</a>

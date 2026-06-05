@@ -68,6 +68,11 @@ REQUIRED_PUBLIC_TERMS = [
     "bring-up checklist",
     "validation report",
     "교육/컨설팅 상세 페이지",
+    "기술 검토 요청",
+    "1주 기술 진단",
+    "2~4주 센서 PoC",
+    "문의 전 준비 자료",
+    "샘플 산출물",
 ]
 
 FORBIDDEN_PRIVATE_TERMS = [
@@ -110,6 +115,9 @@ FORBIDDEN_PUBLIC_PHRASES = [
     "양산 적용 항목",
     "Proof & Deliverables",
     "Proof &amp; Deliverables",
+    "메시지는 데모 장식보다",
+    "사이트 메시지는",
+    "기존 상세 페이지는 그대로 유지합니다",
 ]
 
 REQUIRED_WORKFLOW_SNIPPETS = [
@@ -275,11 +283,18 @@ def main() -> int:
         "교육/컨설팅과 임베디드 제품 PoC는 지금 바로 제공하고",
         "ZM4 FPGA SoM 기반 센서 처리 플랫폼은 개발 중입니다.",
         "FPGA / Embedded / Edge AI / Hardware Prototyping",
-        "메시지는 데모 장식보다 data path, 검증 로그, 산출물 기준으로 구성합니다.",
         "보편적인 기술 다이어그램",
         "Camera / TDC / CIS",
         "바로 제공 가능",
         "개발 중인 ZM4 플랫폼",
+        "기술 검토 요청",
+        "1주 기술 진단",
+        "2~4주 센서 PoC",
+        "문의 전 준비 자료",
+        "샘플 산출물",
+        'rel="canonical"',
+        'property="og:title"',
+        'name="twitter:card"',
         "data-media-src",
         "hero-media-image",
         "hero-disciplines",
