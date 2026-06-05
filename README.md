@@ -4,14 +4,16 @@
 
 ## 현재 포지셔닝
 
-사이트의 중심 메시지는 `FPGA 기반 센서 처리 기술과 ZM4 플랫폼`이다.
+사이트의 중심 메시지는 `FPGA/Zynq 센서 처리 기술 검토와 PoC`다. `FPGA 기반 센서 처리 기술과 ZM4 플랫폼` 포지셔닝은 유지하되, 첫 화면에서는 당장 문의 가능한 기술 진단, 교육/컨설팅, 센서 PoC를 먼저 보여주고 ZM4는 개발 중 플랫폼으로 분리한다.
 
 - 메인 기술: `Camera / TDC / CIS` 센서 입력을 FPGA/Zynq 기반 `capture`, `timing`, `preprocessing` 구조로 연결한다.
-- 시각 톤: `FPGA / Embedded / Edge AI / Hardware Prototyping` 중심으로 두고, 장식보다 `data path`, 검증 로그, 산출물을 먼저 보여준다.
+- 시각 톤: `FPGA / Embedded / Edge AI / Hardware Prototyping` 중심으로 두고, 장식보다 고객 보드/센서 조건, `data path`, 검증 로그, 산출물을 먼저 보여준다.
 - 기술 표현: 특정 완성 모듈을 과장하지 않고 `보편적인 기술 다이어그램`으로 `Sensor Input`, `FPGA Capture`, `Processing`, `Host & Validation` 흐름을 보여준다.
 - 개발 중 플랫폼: `ZM4 FPGA SoM`은 `개발 중인 ZM4 플랫폼`으로 표현한다.
-- 바로 제공 가능 범위: `FPGA/Zynq 실무 교육`, `기술 컨설팅`, `임베디드 제품 PoC`.
+- 바로 제공 가능 범위: `1주 기술 진단`, `FPGA/Zynq 실무 교육`, `기술 컨설팅`, `2~4주 센서 PoC`, `임베디드 제품 PoC`.
 - 신뢰 근거: `register map`, `timing capture log`, `CSV log`, `host CLI`, `bring-up checklist`, `validation report`.
+- 문의 전 준비 자료: 센서 모델, 사용 보드, 현재 실패 로그, 목표 성능, 원하는 산출물.
+- SEO/social: 첫 화면의 기술 검토/PoC 메시지에 맞춰 canonical, Open Graph, Twitter card metadata를 유지한다.
 - 메인 페이지에는 기존 상세 페이지 4개로 연결되는 `상세 페이지` 섹션을 유지한다.
 
 ## 파일 구조
