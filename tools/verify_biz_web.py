@@ -174,7 +174,7 @@ def ensure_large_favicon_face() -> None:
     # Minimal PNG parsing is intentionally avoided here; the approved asset hash
     # covers composition while png_size covers dimensions.
     digest = hashlib.sha256(data).hexdigest()
-    expected = "9602da4ec73890c99f34088846460e36b3543148fe521afbc44e8a48ac738f89"
+    expected = "2bd3772c67846a09072260ee4ce045c0d1a32a844563ea8961acfa3c39383f5e"
     if digest != expected:
         fail("assets/favicon-32.png should be the approved large face-only favicon")
 
