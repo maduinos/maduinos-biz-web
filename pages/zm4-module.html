@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ZM4 FPGA SoM은 MADUINOS가 개발 중인 ZM4 플랫폼입니다. Camera / TDC / CIS 센서 처리 모듈과 검증 키트를 준비하기 위한 FPGA/Zynq 기반 기준 하드웨어입니다.">
-  <title>MADUINOS | ZM4 FPGA SoM Platform</title>
+  <meta name="description" content="MADUINOS ZM4/ZM4MPSoC SoM 모듈 상세 페이지입니다. Zynq7000/ZynqMPSoC, DDR3/DDR4L, QSPI Flash, 0°C ~ 65°C 동작과 고객 맞춤형 사양을 제공합니다.">
+  <title>MADUINOS | ZM4/ZM4MPSoC SoM Module</title>
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/favicon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -15,19 +15,17 @@
     <div class="shell detail-hero-grid">
       <div>
         <a class="back-link" href="../index.html">MADUINOS</a>
-        <p class="eyebrow">개발 중인 ZM4 플랫폼 · ZM4 FPGA SoM</p>
+        <p class="eyebrow">ZM4/ZM4MPSoC SoM 모듈</p>
         <h1>
-          <span class="keep">ZM4는 센서 처리 기술을</span><br>
-          <span class="keep">모듈화하기 위한</span><br>
-          <span class="keep">기준 플랫폼입니다.</span>
+          <span class="keep">ZM4/ZM4MPSoC</span><br>
+          <span class="keep">SoM 모듈</span>
         </h1>
         <p class="lead">
-          ZM4 FPGA SoM은 Camera / TDC / CIS 기술을 검증하고,
-          향후 센서 처리 모듈과 개발 키트로 확장하기 위해 개발 중인 FPGA/Zynq 기반 플랫폼입니다.
+          Zynq7000/ZynqMPSoC 기반으로 소형 carrier board에 연결되는 SoM 모듈입니다.
         </p>
       </div>
       <div class="image-frame">
-        <img src="../assets/zm4-fpga-som-module.png" alt="ZM4 FPGA SoM platform under development with AMD Zynq processing core">
+        <img src="../assets/zm4-zm4mpsoc-black-som-module.png" alt="ZM4 and ZM4MPSoC black SoM module product image">
       </div>
     </div>
   </header>
@@ -36,21 +34,18 @@
     <section class="detail-section">
       <div class="shell">
         <div class="section-head">
-          <p class="eyebrow">Platform Role</p>
-          <h2>ZM4가 맡을 역할</h2>
-          <p>
-            ZM4는 단독 판매 문구보다 개발 중인 ZM4 플랫폼으로 설명합니다.
-            목표는 센서 입력, FPGA Capture, Processing, Host &amp; Validation을 한 보드 흐름에서 검증하는 것입니다.
-          </p>
+          <p class="eyebrow">Technology Diagram</p>
+          <h2>기술 다이어그램</h2>
+          <p>Carrier I/O, SoM, data path, host system으로 이어지는 구조입니다.</p>
         </div>
-        <div class="diagram module-diagram" aria-label="ZM4 FPGA SoM and sensor processing platform concept">
-          <div class="flow-node"><strong>Sensor Input</strong><span>Camera / TDC / CIS / trigger</span></div>
+        <div class="diagram module-diagram" aria-label="ZM4 SoM module technology diagram">
+          <div class="flow-node"><strong>Carrier I/O</strong><span>TDC · CIS · camera · trigger</span></div>
           <div class="flow-arrow">→</div>
-          <div class="diagram-core module-core"><strong>ZM4 FPGA SoM</strong><span>FPGA/Zynq data path · firmware · register map</span></div>
+          <div class="diagram-core module-core"><strong>ZM4/ZM4MPSoC SoM</strong><span>Zynq7000/ZynqMPSoC · DDR3/DDR4L · QSPI</span></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-node"><strong>Carrier / Kit</strong><span>power · I/O · debug · expansion</span></div>
+          <div class="flow-node"><strong>Data Path</strong><span>AXI · DMA · register map</span></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-node"><strong>Validation</strong><span>host CLI · CSV log · validation report</span></div>
+          <div class="flow-node"><strong>Host System</strong><span>firmware · CLI · viewer · log</span></div>
         </div>
       </div>
     </section>
@@ -58,19 +53,15 @@
     <section class="detail-section alt">
       <div class="shell split-media">
         <div class="image-frame">
-          <img src="../assets/edge-ai-carrier-lab.png" alt="FPGA carrier and sensor validation setup for ZM4 platform direction">
+          <img src="../assets/zm4-zm4mpsoc-black-som-module.png" alt="ZM4 and ZM4MPSoC SoM black module product render">
         </div>
         <div>
-          <p class="eyebrow">Development Status</p>
-          <h2>공개 스펙은 검증된 항목부터 단계적으로 정리합니다.</h2>
-          <p>
-            ZM4는 현재 개발 중입니다. 그래서 사이트에서는 완성품처럼 단정하지 않고,
-            어떤 센서 처리 기술을 올릴지, 어떤 검증 산출물을 만들지, 어떤 교육/PoC와 연결될지를 명확히 보여줍니다.
-          </p>
+          <p class="eyebrow">Product Image</p>
+          <h2>제품 이미지</h2>
           <div class="spec-list">
-            <div><strong>Current Message</strong><span>개발 중인 ZM4 플랫폼, FPGA/Zynq 기반 센서 처리 기준 하드웨어</span></div>
-            <div><strong>Target Specification</strong><span>sensor I/O, FPGA Capture, firmware, host CLI, validation kit</span></div>
-            <div><strong>Linked Services</strong><span>FPGA/Zynq 교육, 기술 컨설팅, 임베디드 제품 PoC는 바로 제공 가능</span></div>
+            <div><strong>Core</strong><span>Zynq7000 / ZynqMPSoC</span></div>
+            <div><strong>Memory</strong><span>DDR3/DDR4L, 32 MB QSPI Flash</span></div>
+            <div><strong>Temperature</strong><span>0°C ~ 65°C, 고객 맞춤형 사양 가능</span></div>
           </div>
         </div>
       </div>
@@ -79,41 +70,43 @@
     <section class="detail-section">
       <div class="shell">
         <div class="section-head">
-          <p class="eyebrow">Sensor Processing Direction</p>
-          <h2>Camera / TDC / CIS 기술을 올릴 플랫폼입니다.</h2>
-          <p>
-            ZM4의 개발 방향은 특정 데모 하나가 아니라 반복 가능한 센서 처리 구조입니다.
-            register map, timing capture log, CSV log, host CLI, validation report가 함께 남는 흐름을 목표로 합니다.
-          </p>
+          <p class="eyebrow">Detailed Specification</p>
+          <h2>상세 스펙</h2>
         </div>
-        <div class="diagram technology-flow" aria-label="ZM4 sensor processing target flow">
-          <div class="flow-node"><strong>Sensor Input</strong><span>Camera / TDC / CIS</span></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-node"><strong>FPGA Capture</strong><span>timestamp · line buffer · frame buffer</span></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-node"><strong>Processing</strong><span>preprocessing · calibration · histogram</span></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-node"><strong>Host &amp; Validation</strong><span>host CLI · CSV log · validation report</span></div>
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead><tr><th>항목</th><th>스펙</th></tr></thead>
+            <tbody>
+              <tr><td>제품 옵션</td><td>ZM4 / ZM4MPSoC</td></tr>
+              <tr><td>SoC</td><td>Zynq7000 / ZynqMPSoC</td></tr>
+              <tr><td>CPU</td><td>ARM Cortex-A9 class / Cortex-A53 + Cortex-R5F class</td></tr>
+              <tr><td>Memory</td><td>DDR3/DDR4L</td></tr>
+              <tr><td>Boot flash</td><td>32 MB QSPI Flash</td></tr>
+              <tr><td>PS I/O</td><td>48 PS MIO</td></tr>
+              <tr><td>PL I/O</td><td>100 FPGA I/O</td></tr>
+              <tr><td>Connector</td><td>2 x board-to-board connector class</td></tr>
+              <tr><td>Power</td><td>5V single supply</td></tr>
+              <tr><td>Temperature</td><td>0°C ~ 65°C</td></tr>
+              <tr><td>Custom option</td><td>고객 맞춤형 사양 가능</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
     <section class="detail-section alt">
-      <div class="shell">
-        <div class="section-head">
-          <p class="eyebrow">Target Specification</p>
-          <h2>목표 스펙은 검증 흐름 중심으로 공개합니다.</h2>
+      <div class="shell split-media reverse">
+        <div>
+          <p class="eyebrow">Application Areas</p>
+          <h2>어플리케이션 영역</h2>
+          <div class="application-list">
+            <div><strong>Sensor carrier</strong><span>TDC timing board, CIS line scan board.</span></div>
+            <div><strong>Industrial control</strong><span>장비 제어, 계측, gateway module.</span></div>
+            <div><strong>Image processing</strong><span>camera, vision, line scan processing.</span></div>
+          </div>
         </div>
-        <div class="table-wrap">
-          <table class="spec-table">
-            <thead><tr><th>항목</th><th>목표 방향</th><th>공개 기준</th></tr></thead>
-            <tbody>
-              <tr><td>Platform role</td><td>Camera / TDC / CIS 센서 처리 기술을 검증하는 FPGA SoM 플랫폼</td><td>개발 중인 ZM4 플랫폼으로 명확히 표시</td></tr>
-              <tr><td>Core processing</td><td>FPGA/Zynq data path, register map, firmware, host CLI</td><td>동작 로그와 검증 결과 기준으로 공개</td></tr>
-              <tr><td>Carrier 적용</td><td>sensor I/O, power, debug, trigger, expansion 연결</td><td>고객 PoC 조건에 맞춰 범위 정의</td></tr>
-              <tr><td>Validation kit</td><td>CSV log, timing capture log, viewer, validation report</td><td>재현 가능한 산출물 기준으로 공개</td></tr>
-            </tbody>
-          </table>
+        <div class="image-frame">
+          <img src="../assets/edge-ai-carrier-lab.png" alt="ZM4 SoM application on carrier board with sensor interfaces">
         </div>
       </div>
     </section>
@@ -121,17 +114,14 @@
     <section class="detail-section">
       <div class="shell contact-layout">
         <div>
-          <p class="eyebrow">ZM4 Contact</p>
-          <h2>ZM4는 개발 상태와 적용 가능 범위를 구분해 협의합니다.</h2>
-          <p>
-            ZM4 자체 문의, Camera / TDC / CIS 센서 처리 기술 문의, 교육/컨설팅 문의를 구분해 보내주시면
-            현재 제공 가능한 범위와 개발 중 항목을 분리해 안내합니다.
-          </p>
+          <p class="eyebrow">Contact</p>
+          <h2>ZM4 적용 조건을 보내주세요.</h2>
+          <p>필요한 I/O, carrier board 조건, memory 옵션, 동작 환경을 알려주시면 적용 범위를 안내합니다.</p>
         </div>
         <div class="contact-card">
-          <strong>ZM4 플랫폼 협의</strong>
+          <strong>ZM4/ZM4MPSoC SoM 문의</strong>
           <div class="email-line">whjeong@maduinos.com</div>
-          <a class="button" href="mailto:whjeong@maduinos.com?subject=MADUINOS%20ZM4%20Platform%20문의">메일 보내기</a>
+          <a class="button" href="mailto:whjeong@maduinos.com?subject=MADUINOS%20ZM4%20ZM4MPSoC%20SoM%20문의">메일 보내기</a>
         </div>
       </div>
     </section>

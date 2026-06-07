@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MADUINOS CIS 기반 모듈 상세 페이지입니다. 지폐계수기, 투표장치, 공장 라인스캔센서와 CIS 기반 영상인식이 필요한 모든 고속 장치에 필요한 line scan, 조명 제어, LVDS capture 스펙을 제공합니다.">
+  <title>MADUINOS | CIS Line Scan Module</title>
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../assets/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/maduinos-biz.css">
+</head>
+<body>
+  <header class="detail-hero detail-hero-media">
+    <div class="shell detail-hero-grid">
+      <div>
+        <a class="back-link" href="../index.html">MADUINOS</a>
+        <p class="eyebrow">CIS 기반 모듈 · 지폐계수기 · 투표장치 · 고속 영상인식 장치</p>
+        <h1>
+          <span class="keep">라인 이미지를</span><br>
+          <span class="keep">FPGA로 캡처하는</span><br>
+          <span class="keep">CIS 모듈</span>
+        </h1>
+        <p class="lead">
+          이송 대상의 line scan 데이터를 조명 timing과 함께 캡처합니다.
+        </p>
+      </div>
+      <div class="image-frame dark">
+        <img src="../assets/cis-application-markets.png" alt="CIS module product image for banknote counter voting device and factory line scan sensor markets">
+      </div>
+    </div>
+  </header>
+
+  <main class="detail-main">
+    <section class="detail-section">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Technology Diagram</p>
+          <h2>기술 다이어그램</h2>
+          <p>대상물 이송, CIS scan, FPGA capture, host 처리로 이어지는 구조입니다.</p>
+        </div>
+        <div class="diagram technology-flow" aria-label="CIS FPGA module technology diagram">
+          <div class="flow-node"><strong>Object Path</strong><span>banknote · ballot · document · web material</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><strong>CIS Scan</strong><span>R/G/B/IR/UV · line trigger</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><strong>FPGA Capture</strong><span>LVDS · line buffer · timing</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><strong>Host Output</strong><span>image data · calibration · detection</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section alt">
+      <div class="shell split-media">
+        <div class="image-frame">
+          <img src="../assets/cis-application-markets.png" alt="CIS application markets image for high speed recognition and factory inspection equipment">
+        </div>
+        <div>
+          <p class="eyebrow">Product Image</p>
+          <h2>제품 이미지</h2>
+          <div class="spec-list">
+            <div><strong>Markets</strong><span>지폐계수기, 투표장치, 공장 라인스캔센서, CIS 기반 영상인식이 필요한 모든 고속 장치</span></div>
+            <div><strong>Light</strong><span>R/G/B/IR/UV 조명</span></div>
+            <div><strong>Capture</strong><span>LVDS, line buffer, 16us/line</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Detailed Specification</p>
+          <h2>상세 스펙</h2>
+        </div>
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead><tr><th>항목</th><th>스펙 범위</th></tr></thead>
+            <tbody>
+              <tr><td>Scan width</td><td>54mm, 108mm, 200mm, 216mm, 308mm, custom</td></tr>
+              <tr><td>Pixel density</td><td>200 / 300 / 600 / 1200 dpi</td></tr>
+              <tr><td>Light source</td><td>R/G/B/IR/UV, reflective, transmitted</td></tr>
+              <tr><td>Line speed</td><td>16us/line</td></tr>
+              <tr><td>Output</td><td>Analog, digital, LVDS, Camera Link class interface</td></tr>
+              <tr><td>Data width</td><td>8-bit / 10-bit class digital output</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section alt">
+      <div class="shell split-media reverse">
+        <div>
+          <p class="eyebrow">Application Areas</p>
+          <h2>어플리케이션 영역</h2>
+          <div class="application-list">
+            <div><strong>지폐계수기 / sorter</strong><span>고속 이송 중 front/back line scan.</span></div>
+            <div><strong>투표장치</strong><span>투표지 이송 중 line image capture와 영상인식 전처리.</span></div>
+            <div><strong>공장 라인스캔센서</strong><span>edge, label, scratch, dirt 검출.</span></div>
+            <div><strong>고속 영상인식 장치</strong><span>CIS 기반 영상인식이 필요한 모든 고속 장치.</span></div>
+          </div>
+        </div>
+        <div class="image-frame">
+          <img src="../assets/tdc-cis-lab-system.png" alt="CIS line sensor validation setup with FPGA capture and image data">
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <div class="shell contact-layout">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>CIS 적용 조건을 보내주세요.</h2>
+          <p>대상물 폭, 이송 속도, dpi, 조명 파장, 출력 인터페이스를 알려주시면 검토 범위를 안내합니다.</p>
+        </div>
+        <div class="contact-card">
+          <strong>CIS 모듈 문의</strong>
+          <div class="email-line">whjeong@maduinos.com</div>
+          <a class="button" href="mailto:whjeong@maduinos.com?subject=MADUINOS%20CIS%20Module%20문의">메일 보내기</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

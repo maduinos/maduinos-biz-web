@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MADUINOS FPGA 기반 TDC 모듈 상세 페이지입니다. 기본 16채널, 다이나믹 동작 시 수십채널 가능, USB2.0, 이더넷 100/1000Mbps, UART, CAN, 5V/12V/24V 전원 스펙을 제공합니다.">
+  <title>MADUINOS | FPGA TDC Module</title>
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../assets/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/maduinos-biz.css">
+</head>
+<body>
+  <header class="detail-hero detail-hero-media">
+    <div class="shell detail-hero-grid">
+      <div>
+        <a class="back-link" href="../index.html">MADUINOS</a>
+        <p class="eyebrow">FPGA 기반 TDC 모듈</p>
+        <h1>
+          <span class="keep">정밀 시간 측정용</span><br>
+          <span class="keep">TDC 모듈</span>
+        </h1>
+        <p class="lead">
+          입력 이벤트의 시간차를 FPGA에서 측정하고 USB2.0, 이더넷, UART, CAN으로 전송합니다.
+        </p>
+      </div>
+      <div class="image-frame dark">
+        <img src="../assets/tdc-timing-applications.png" alt="FPGA TDC timing module product image with pulse timing instruments">
+      </div>
+    </div>
+  </header>
+
+  <main class="detail-main">
+    <section class="detail-section">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Technology Diagram</p>
+          <h2>기술 다이어그램</h2>
+          <p>입력 이벤트, TDC capture, 거리/시간 계산, host 출력으로 이어지는 구조입니다.</p>
+        </div>
+        <div class="diagram technology-flow" aria-label="FPGA TDC module technology diagram">
+          <div class="flow-node"><strong>Event Input</strong><span>pulse · trigger · sensor event</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><strong>TDC Capture</strong><span>기본 16채널 · dynamic channel</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><strong>Time Data</strong><span>distance · timestamp · raw data</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><strong>Host Output</strong><span>USB2.0 · Ethernet 100/1000Mbps · UART · CAN</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section alt">
+      <div class="shell split-media">
+        <div class="image-frame">
+          <img src="../assets/tdc-cis-lab-system.png" alt="TDC module validation setup with FPGA board oscilloscope and timing data">
+        </div>
+        <div>
+          <p class="eyebrow">Product Image</p>
+          <h2>제품 이미지</h2>
+          <div class="spec-list">
+            <div><strong>Channel</strong><span>기본 16채널, 다이나믹 동작 시 수십채널 가능</span></div>
+            <div><strong>Resolution</strong><span>거리 분해능 4mm</span></div>
+            <div><strong>Interface</strong><span>USB2.0, 이더넷 100/1000Mbps, UART, CAN</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Detailed Specification</p>
+          <h2>상세 스펙</h2>
+        </div>
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead><tr><th>항목</th><th>스펙</th></tr></thead>
+            <tbody>
+              <tr><td>채널 수</td><td>기본 16채널, 다이나믹 동작 시 수십채널 가능</td></tr>
+              <tr><td>거리 분해능</td><td>거리 분해능 4mm</td></tr>
+              <tr><td>갱신율</td><td>최대 거리에 따라 가변</td></tr>
+              <tr><td>Raw echo</td><td>거리에 따라 가변 가능</td></tr>
+              <tr><td>출력 인터페이스</td><td>USB2.0, 이더넷 100/1000Mbps, UART, CAN</td></tr>
+              <tr><td>전원</td><td>5V/12V/24V</td></tr>
+              <tr><td>환경 온도</td><td>0°C ~ 65°C</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section alt">
+      <div class="shell split-media reverse">
+        <div>
+          <p class="eyebrow">Application Areas</p>
+          <h2>어플리케이션 영역</h2>
+          <div class="application-list">
+            <div><strong>이벤트 시간 계측</strong><span>복수 입력 이벤트의 timestamp 수집.</span></div>
+            <div><strong>TOF 측정</strong><span>송신 trigger와 수신 이벤트의 시간차 계산.</span></div>
+            <div><strong>산업용 검사 장비</strong><span>반복 측정 데이터와 host log 확보.</span></div>
+          </div>
+        </div>
+        <div class="image-frame">
+          <img src="../assets/tdc-timing-applications.png" alt="TDC timing module application image">
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <div class="shell contact-layout">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>TDC 적용 조건을 보내주세요.</h2>
+          <p>채널 수, 목표 거리/시간 분해능, 최대 거리, 출력 인터페이스를 알려주시면 검토 범위를 안내합니다.</p>
+        </div>
+        <div class="contact-card">
+          <strong>TDC 모듈 문의</strong>
+          <div class="email-line">whjeong@maduinos.com</div>
+          <a class="button" href="mailto:whjeong@maduinos.com?subject=MADUINOS%20TDC%20Module%20문의">메일 보내기</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
