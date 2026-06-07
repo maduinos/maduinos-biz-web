@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MADUINOS 임베디드 제품 PoC는 바로 제공 가능 범위입니다. Camera / TDC / CIS 센서 조건을 FPGA/Zynq data path, host CLI, CSV log, validation report로 검증합니다.">
-  <title>MADUINOS | Embedded Product PoC</title>
+  <meta name="description" content="MADUINOS 제품 적용 문의 안내 페이지입니다. 교육 및 강의, TDC 모듈, CIS 모듈, ZM4/ZM4MPSoC SoM 상세로 이동할 수 있습니다.">
+  <title>MADUINOS | Product Application Inquiry</title>
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/favicon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -15,19 +15,19 @@
     <div class="shell detail-hero-grid">
       <div>
         <a class="back-link" href="../index.html">MADUINOS</a>
-        <p class="eyebrow">바로 제공 가능 · 임베디드 제품 PoC</p>
+        <p class="eyebrow">Product Lines</p>
         <h1>
-          <span class="keep">센서 아이디어를</span><br>
-          <span class="keep">검증 가능한</span><br>
-          <span class="keep">작은 시스템으로 만듭니다.</span>
+          <span class="keep">교육과 모듈 문의를</span><br>
+          <span class="keep">제품 라인별로</span><br>
+          <span class="keep">정리합니다.</span>
         </h1>
         <p class="lead">
-          PoC는 MADUINOS의 메인 제품이 아니라 Camera / TDC / CIS 기술과 FPGA/Zynq 경험을
-          고객 제품 조건에 적용하기 위한 실행 서비스입니다.
+          교육 및 강의, FPGA 기반 TDC 모듈, CIS 기반 모듈,
+          ZM4/ZM4MPSoC SoM 모듈의 핵심 자료로 연결됩니다.
         </p>
       </div>
       <div class="image-frame dark">
-        <img src="../assets/edge-ai-carrier-lab.png" alt="FPGA carrier board with camera and sensor modules for embedded product PoC">
+        <img src="../assets/edge-ai-carrier-lab.png" alt="FPGA module application board and sensor setup">
       </div>
     </div>
   </header>
@@ -36,114 +36,14 @@
     <section class="detail-section">
       <div class="shell">
         <div class="section-head">
-          <p class="eyebrow">PoC Role</p>
-          <h2>PoC는 전체 제품을 만드는 일이 아니라 판단 근거를 만드는 일입니다.</h2>
-          <p>
-            고객이 가진 센서, 보드, 목표 성능을 작은 동작 시스템으로 줄여서
-            다음 개발을 계속할지, 어떤 리스크가 있는지 판단할 수 있게 합니다.
-          </p>
+          <p class="eyebrow">Detail Pages</p>
+          <h2>제품 라인 상세 페이지</h2>
         </div>
-        <div class="diagram system-diagram" aria-label="Embedded product PoC system architecture">
-          <div class="diagram-column">
-            <div class="flow-node"><strong>Sensor Input</strong><span>Camera / TDC / CIS / GPIO / trigger</span></div>
-            <div class="flow-node"><strong>Target Specification</strong><span>rate · latency · timing · output condition</span></div>
-          </div>
-          <div class="diagram-core">
-            <strong>FPGA/Zynq data path</strong>
-            <span>FPGA Capture · Processing · AXI-Lite · PS firmware</span>
-          </div>
-          <div class="diagram-column">
-            <div class="flow-node"><strong>Host Tool</strong><span>host CLI, viewer, CSV log</span></div>
-            <div class="flow-node"><strong>Validation</strong><span>timing capture log, validation report, next scope</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="detail-section alt">
-      <div class="shell">
-        <div class="section-head">
-          <p class="eyebrow">Deliverables</p>
-          <h2>임베디드 제품 PoC 산출물</h2>
-        </div>
-        <div class="outcome-grid">
-          <article class="outcome-card"><h3>Architecture Package</h3><p>block diagram, data path, register map, clock/reset policy, risk list</p></article>
-          <article class="outcome-card"><h3>Working Prototype</h3><p>custom IP 또는 RTL prototype, firmware wrapper, first data capture demo</p></article>
-          <article class="outcome-card"><h3>Validation Package</h3><p>host CLI, CSV log, timing capture log, validation report, next-step scope</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="detail-section">
-      <div class="shell split-media reverse">
-        <div>
-          <p class="eyebrow">Bring-up Checklist</p>
-          <h2>막힌 지점을 계층별로 분해합니다.</h2>
-          <p>
-            “보드가 안 된다”는 문제는 전원, clock/reset, boot, constraints, register, firmware, sensor timing 중 어디서든 발생합니다.
-            MADUINOS는 각 계층을 작은 성공 기준으로 쪼개 확인합니다.
-          </p>
-          <div class="check-grid">
-            <span>Power rail</span><span>Clock/reset</span><span>JTAG</span><span>Boot</span>
-            <span>DDR</span><span>UART</span><span>AXI-Lite</span><span>Register</span>
-            <span>Self-test</span><span>Sensor capture</span><span>CSV log</span><span>Report</span>
-          </div>
-        </div>
-        <div class="image-frame">
-          <img src="../assets/tdc-cis-lab-system.png" alt="FPGA development system with sensor acquisition and validation monitor">
-        </div>
-      </div>
-    </section>
-
-    <section class="detail-section alt">
-      <div class="shell">
-        <div class="section-head">
-          <p class="eyebrow">Process</p>
-          <h2>작은 범위로 시작해 제품화 검토까지 갑니다.</h2>
-        </div>
-        <div class="process-list">
-          <div class="process-item"><div><h3>1. Discovery</h3><p>현재 보드, 센서, 목표 성능, 실패 로그, 일정과 예산을 정리합니다.</p></div></div>
-          <div class="process-item"><div><h3>2. Architecture Sprint</h3><p>FPGA/SoC 역할, register map, data movement, host tool 구조를 정의합니다.</p></div></div>
-          <div class="process-item"><div><h3>3. Bring-up Prototype</h3><p>첫 boot, 첫 register access, 첫 data capture, 첫 demo를 만듭니다.</p></div></div>
-          <div class="process-item"><div><h3>4. Product Review</h3><p>검증 결과, 리스크, 제품 적용 항목, 다음 개발 범위를 제품화 판단 자료로 정리합니다.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="detail-section">
-      <div class="shell">
-        <div class="section-head">
-          <p class="eyebrow">Scope Table</p>
-          <h2>상세 작업 범위</h2>
-        </div>
-        <div class="table-wrap">
-          <table class="spec-table">
-            <thead><tr><th>범위</th><th>포함 가능 항목</th><th>주의사항</th></tr></thead>
-            <tbody>
-              <tr><td>FPGA/Zynq 교육</td><td>Vivado, Vitis, Zynq PS/PL, AXI-Lite, custom IP, host control</td><td>교육/컨설팅 상세 페이지 기준으로 범위 산정</td></tr>
-              <tr><td>보드 브링업</td><td>power, clock/reset, JTAG, boot, UART, DDR, register self-test</td><td>회로 수정이 필요한 경우 별도 제작 일정 필요</td></tr>
-              <tr><td>임베디드 제품 PoC</td><td>RTL/FW prototype, Python host tool, logging, demo scenario</td><td>제품화 판단용 PoC이며 양산 품질 보증과 분리</td></tr>
-              <tr><td>TDC/CIS/Camera 적용</td><td>coarse timestamp, histogram, line capture, illumination timing, frame capture</td><td>지원 항목은 센서 조건과 검증 로그 기준으로 공개</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="detail-section alt">
-      <div class="shell contact-layout">
-        <div>
-          <p class="eyebrow">PoC Contact</p>
-          <h2>작게 검증할 범위를 먼저 정합니다.</h2>
-          <p>
-            센서 모델, 보드 사진, 현재 로그, 원하는 결과를 보내주시면
-            임베디드 제품 PoC로 가능한 범위와 기술 컨설팅으로 충분한 범위를 나눠 제안합니다.
-          </p>
-        </div>
-        <div class="contact-card">
-          <strong>임베디드 제품 PoC 문의</strong>
-          <div class="email-line">whjeong@maduinos.com</div>
-          <a class="button" href="mailto:whjeong@maduinos.com?subject=MADUINOS%20Embedded%20PoC%20문의">메일 보내기</a>
+        <div class="page-link-grid">
+          <a href="fpga-education-consulting.html">교육 및 강의</a>
+          <a href="tdc-module.html">FPGA 기반 TDC 모듈</a>
+          <a href="cis-module.html">CIS 기반 모듈</a>
+          <a href="zm4-module.html">ZM4/ZM4MPSoC SoM 모듈</a>
         </div>
       </div>
     </section>

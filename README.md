@@ -4,17 +4,20 @@
 
 ## 현재 포지셔닝
 
-사이트의 중심 메시지는 `FPGA/Zynq 센서 처리 기술 검토와 PoC`다. `FPGA 기반 센서 처리 기술과 ZM4 플랫폼` 포지셔닝은 유지하되, 첫 화면에서는 당장 문의 가능한 기술 진단, 교육/컨설팅, 센서 PoC를 먼저 보여주고 ZM4는 개발 중 플랫폼으로 분리한다.
+사이트의 중심 메시지는 `AI/FPGA 교육 및 영상/신호 모듈 제품`이다. 공개 홈은 `제품 라인` 4개를 짧은 카드 구조로 보여주고, 각 관심 영역은 상세 페이지로 연결한다.
 
-- 메인 기술: `Camera / TDC / CIS` 센서 입력을 FPGA/Zynq 기반 `capture`, `timing`, `preprocessing` 구조로 연결한다.
-- 시각 톤: `FPGA / Embedded / Edge AI / Hardware Prototyping` 중심으로 두고, 장식보다 고객 보드/센서 조건, `data path`, 검증 로그, 산출물을 먼저 보여준다.
-- 기술 표현: 특정 완성 모듈을 과장하지 않고 `보편적인 기술 다이어그램`으로 `Sensor Input`, `FPGA Capture`, `Processing`, `Host & Validation` 흐름을 보여준다.
-- 개발 중 플랫폼: `ZM4 FPGA SoM`은 `개발 중인 ZM4 플랫폼`으로 표현한다.
-- 바로 제공 가능 범위: `1주 기술 진단`, `FPGA/Zynq 실무 교육`, `기술 컨설팅`, `2~4주 센서 PoC`, `임베디드 제품 PoC`.
-- 신뢰 근거: `register map`, `timing capture log`, `CSV log`, `host CLI`, `bring-up checklist`, `validation report`.
-- 문의 전 준비 자료: 센서 모델, 사용 보드, 현재 실패 로그, 목표 성능, 원하는 산출물.
-- SEO/social: 첫 화면의 기술 검토/PoC 메시지에 맞춰 canonical, Open Graph, Twitter card metadata를 유지한다.
-- 메인 페이지에는 기존 상세 페이지 4개로 연결되는 `상세 페이지` 섹션을 유지한다.
+- `교육 및 강의`: `FPGA VOD 강의 목차`, `고객 맞춤형 교육`, `고객 보드 Bring-Up`, `Verilog HDL`, `Zynq / Zynq MPSoC`, `LVDS` 중심의 `레벨별 커리큘럼`.
+- `FPGA 기반 TDC 모듈`: 기본 16채널, 다이나믹 동작 시 수십채널 가능, USB2.0, 이더넷 100/1000Mbps, UART, CAN 기반 timing capture 모듈.
+- `CIS 기반 모듈`: `지폐계수기`, `투표장치`, `공장 라인스캔센서`, `CIS 기반 영상인식이 필요한 모든 고속 장치` 적용 시장과 line scan 기술.
+- `ZM4/ZM4MPSoC SoM 모듈`: Zynq7000/ZynqMPSoC, DDR3/DDR4L, QSPI Flash, 고객 맞춤형 사양 기반 모듈.
+
+## 콘텐츠 기준
+
+- 상세 페이지는 `제품 이미지`, `기술 다이어그램`, `상세 스펙`, `어플리케이션 영역` 순서로 구성한다.
+- TDC 상세 스펙은 `기본 16채널`, `다이나믹 동작 시 수십채널 가능`, `거리 분해능 4mm`, `최대 거리에 따라 가변`, `거리에 따라 가변 가능`, `USB2.0`, `이더넷 100/1000Mbps`, `UART, CAN`, `5V/12V/24V`, `0°C ~ 65°C`를 포함한다.
+- CIS 상세 스펙은 `R/G/B/IR/UV` 조명, scan width, dpi, `16us/line`, `LVDS` capture를 포함한다.
+- ZM4 상세 스펙은 `ZM4 / ZM4MPSoC`, `Zynq7000 / ZynqMPSoC`, `DDR3/DDR4L`, `32 MB QSPI Flash`, `48 PS MIO`, `100 FPGA I/O`, `0°C ~ 65°C`, `고객 맞춤형 사양 가능`을 포함한다.
+- 교육 상세는 `Verilog HDL`, `Zynq / Zynq MPSoC`, `Zynq7000 초급`, `Zynq7000 중급`, `Zynq7000 고급`, `LVDS`, `고객 보드 Bring-Up` 흐름으로 구성한다.
 
 ## 파일 구조
 
@@ -24,35 +27,29 @@
 - `favicon.ico`: 브라우저 탭용 MADUINOS 아이콘
 - `assets/favicon-32.png`: PNG favicon
 - `assets/apple-touch-icon.png`: iOS 홈 화면용 아이콘
-- `assets/profile-github.png`: GitHub 프로필 업로드용 아이콘 전용 정사각 이미지
-- `assets/profile-youtube.png`: YouTube 프로필 업로드용 아이콘 전용 정사각 이미지
-- `assets/profile-icon.png`: 작은 원형 표시용 아이콘 전용 프로필 이미지
 - `assets/maduinos-biz.css`: 공통 스타일
-- `assets/maduinos_wordmark.png`: MADUINOS 워드마크
-- `assets/hero-edge-ai-fpga.png`: FPGA 센서 처리 hero 보조 이미지
-- `assets/edge-ai-carrier-lab.png`: Camera capture와 carrier 기반 검증 이미지
+- `assets/maduinos_wordmark_reference_clean.png`: 홈 헤더용 MADUINOS 워드마크
+- `assets/tdc-timing-applications.png`: TDC timing module 어플리케이션 이미지
+- `assets/cis-application-markets.png`: CIS 지폐계수기/투표장치/공장 라인스캔센서 어플리케이션 이미지
 - `assets/tdc-cis-lab-system.png`: TDC/CIS 센서 취득 개발 시스템 이미지
-- `assets/zm4-fpga-som-module.png`: 개발 중인 ZM4 FPGA SoM 방향 이미지
-- `assets/zm4-module-render.png`: ZM4 모듈 보조 렌더
-- `pages/ai-edge-vision.html`: Camera/TDC/CIS 센서 처리 기술 상세 페이지
-- `pages/fpga-education-consulting.html`: FPGA/Zynq 실무 교육 및 기술 컨설팅 상세 페이지
-- `pages/fpga-product-poc.html`: 임베디드 제품 PoC 상세 페이지
-- `pages/zm4-module.html`: 개발 중인 ZM4 플랫폼 상세 페이지
+- `assets/edge-ai-carrier-lab.png`: FPGA carrier 기반 교육/검증 이미지
+- `assets/zm4-zm4mpsoc-black-som-module.png`: ZM4/ZM4MPSoC 검은색 SoM 모듈 이미지
+- `pages/fpga-education-consulting.html`: 교육 및 강의 상세 페이지
+- `pages/tdc-module.html`: FPGA 기반 TDC 모듈 상세 페이지
+- `pages/cis-module.html`: CIS 기반 모듈 상세 페이지
+- `pages/zm4-module.html`: ZM4/ZM4MPSoC SoM 모듈 상세 페이지
+- `pages/ai-edge-vision.html`: 기존 URL 호환용 센서 모듈 안내 페이지
+- `pages/fpga-product-poc.html`: 기존 URL 호환용 제품 적용 문의 안내 페이지
 - `tools/verify_biz_web.py`: 구조, 문구, 링크, 배포 설정 검증 스크립트
 
 ## 공개 메시지 원칙
 
-고객-facing HTML은 현재 제공 가능한 범위와 개발 중인 범위를 분리한다.
+고객-facing HTML은 글 설명보다 제품 라인 카드, 이미지, 스펙 키워드를 먼저 보여준다.
 
-- `Camera capture`, `TDC timing`, `CIS sensor processing`, `FPGA/Zynq data path`는 보유 기술로 표현한다.
-- `ZM4 FPGA SoM`은 개발 중인 기준 플랫폼으로 표현한다.
-- 교육/컨설팅과 임베디드 제품 PoC는 바로 제공 가능 범위로 표현한다.
-- 모듈이나 키트가 완성 판매 상태인 것처럼 단정하지 않는다.
-- 기술 신뢰성은 산출물과 검증 흐름으로 보여준다.
-
-## 문의 원칙
-
-공개 사이트의 문의 동선은 `whjeong@maduinos.com` 메일 주소로 유지한다. 고객-facing HTML에는 배포 방식이나 내부 구현을 노출하지 않는다.
+- 첫 화면에는 교육 및 강의, TDC, CIS, ZM4/ZM4MPSoC 제품 라인을 직접 배치한다.
+- 각 제품 상세는 이미지와 다이어그램을 먼저 보여준 뒤 스펙과 적용 시장을 설명한다.
+- 문의 동선은 `whjeong@maduinos.com` 메일 주소로 유지한다.
+- 고객-facing HTML에는 배포 방식이나 내부 구현을 노출하지 않는다.
 
 ## 배포 방향
 

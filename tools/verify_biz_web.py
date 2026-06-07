@@ -11,13 +11,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CONTACT_EMAIL = "whjeong@maduinos.com"
 CUSTOM_DOMAIN = "biz.maduinos.com"
-PROFILE_IMAGE_SHA256 = {
-    "assets/profile-icon.png": "b5cc4bdd49dc62f09faed8c446b81801a36ee6b703d29734c2bc14d7639f07c0",
-    "assets/profile-github.png": "b5cc4bdd49dc62f09faed8c446b81801a36ee6b703d29734c2bc14d7639f07c0",
-    "assets/profile-youtube.png": "c596e8cf9e7eaa86fd10c465c99b77cbed13132433935823a748edfe54e2156f",
-}
-
-
 REQUIRED_FILES = [
     "README.md",
     "CNAME",
@@ -27,52 +20,65 @@ REQUIRED_FILES = [
     "assets/maduinos-biz.css",
     "assets/apple-touch-icon.png",
     "assets/favicon-32.png",
-    "assets/hero-edge-ai-fpga.png",
-    "assets/zm4-module-render.png",
-    "assets/zm4-fpga-som-module.png",
+    "assets/maduinos_wordmark_reference_clean.png",
+    "assets/zm4-zm4mpsoc-black-som-module.png",
     "assets/edge-ai-carrier-lab.png",
     "assets/tdc-cis-lab-system.png",
-    "assets/profile-github.png",
-    "assets/profile-youtube.png",
-    "assets/profile-icon.png",
+    "assets/tdc-timing-applications.png",
+    "assets/cis-application-markets.png",
     "pages/ai-edge-vision.html",
+    "pages/tdc-module.html",
+    "pages/cis-module.html",
     "pages/fpga-education-consulting.html",
     "pages/fpga-product-poc.html",
     "pages/zm4-module.html",
 ]
 
 REQUIRED_PUBLIC_TERMS = [
-    "FPGA 기반 센서 처리 기술과 ZM4 플랫폼",
-    "Camera / TDC / CIS",
-    "Camera capture",
-    "TDC timing",
-    "CIS sensor processing",
-    "FPGA/Zynq data path",
-    "보편적인 기술 다이어그램",
-    "개발 중인 ZM4 플랫폼",
-    "ZM4 FPGA SoM",
-    "바로 제공 가능",
-    "FPGA/Zynq 실무 교육",
-    "FPGA / Embedded / Edge AI / Hardware Prototyping",
-    "기술 컨설팅",
-    "임베디드 제품 PoC",
-    "Target Specification",
-    "Sensor Input",
-    "FPGA Capture",
-    "Processing",
-    "Host & Validation",
-    "register map",
-    "timing capture log",
-    "CSV log",
-    "host CLI",
-    "bring-up checklist",
-    "validation report",
-    "교육/컨설팅 상세 페이지",
-    "기술 검토 요청",
-    "1주 기술 진단",
-    "2~4주 센서 PoC",
+    "AI/FPGA 교육 및 영상/신호 모듈 제품",
+    "교육 및 강의",
+    "고객 맞춤형 교육",
+    "고객 보드 Bring-Up",
+    "FPGA VOD 강의 목차",
+    "레벨별 커리큘럼",
+    "Verilog HDL",
+    "Zynq / Zynq MPSoC",
+    "Zynq7000 초급",
+    "Zynq7000 중급",
+    "Zynq7000 고급",
+    "LVDS",
+    "FPGA 기반 TDC 모듈",
+    "거리 분해능 4mm",
+    "기본 16채널",
+    "다이나믹 동작 시 수십채널 가능",
+    "최대 거리에 따라 가변",
+    "거리에 따라 가변 가능",
+    "USB2.0",
+    "이더넷 100/1000Mbps",
+    "UART, CAN",
+    "5V/12V/24V",
+    "0°C ~ 65°C",
+    "CIS 기반 모듈",
+    "지폐계수기",
+    "투표장치",
+    "공장 라인스캔센서",
+    "CIS 기반 영상인식이 필요한 모든 고속 장치",
+    "R/G/B/IR/UV",
+    "16us/line",
+    "ZM4/ZM4MPSoC SoM 모듈",
+    "Zynq7000 / ZynqMPSoC",
+    "DDR3/DDR4L",
+    "Cortex-A53 + Cortex-R5F class",
+    "32 MB QSPI Flash",
+    "48 PS MIO",
+    "100 FPGA I/O",
+    "고객 맞춤형 사양 가능",
+    "제품 이미지",
+    "기술 다이어그램",
+    "상세 스펙",
+    "어플리케이션 영역",
+    "제품 라인",
     "문의 전 준비 자료",
-    "샘플 산출물",
 ]
 
 FORBIDDEN_PRIVATE_TERMS = [
@@ -89,10 +95,7 @@ FORBIDDEN_PRIVATE_TERMS = [
 
 REQUIRED_SECTIONS = [
     "hero",
-    "technologies",
-    "platform",
-    "available-now",
-    "details",
+    "products",
     "contact",
 ]
 
@@ -118,6 +121,58 @@ FORBIDDEN_PUBLIC_PHRASES = [
     "메시지는 데모 장식보다",
     "사이트 메시지는",
     "기존 상세 페이지는 그대로 유지합니다",
+    "LiDAR",
+    "Lidar",
+    "lidar",
+    "라이다",
+    "한 화면에서 선택",
+    "선택합니다",
+    "원하는 항목 선택",
+    "고객이 원하는",
+    "고객은 현재",
+    "First Screen Choice",
+    "Choice",
+    "경쟁 모듈",
+    "경쟁",
+    "제품 개발에 필요한 언어로 정리합니다",
+    "ATM",
+    "FPGA 교육과 모듈 제품",
+    "교육 및 강의 제품",
+    "FPGA 기반 TDC 모듈 제품",
+    "CIS 기반 모듈 제품",
+    "ZM4 SoM 모듈 제품",
+    "채널 수 32",
+    "32채널",
+    "32 channels",
+    "XC7Z010",
+    "G32",
+    "AC7Z010",
+    "AC78Z010",
+    "ac7z010",
+    "ac78z010",
+    "FPGA fabric",
+    "Artix",
+    "676MHz",
+    "수신 기술",
+    "SiPM",
+    "1000Base-T1",
+    "프레임 속도 10 / 20 / 25Hz",
+    "10 / 20 / 25Hz",
+    "raw echo 3",
+    "3 echo raw data",
+    "3 echo",
+    "12V, 1A",
+    "전류",
+    "IP67",
+    "-40°C",
+    "105°C",
+    "119 x 95 x 77",
+    "730g",
+    "기구 기준",
+    "Optics",
+    "rod lens",
+    "20us/line",
+    "35 x 42 mm",
 ]
 
 REQUIRED_WORKFLOW_SNIPPETS = [
@@ -169,38 +224,27 @@ def png_size(path: str) -> tuple[int, int]:
     return int.from_bytes(data[16:20], "big"), int.from_bytes(data[20:24], "big")
 
 
-def ensure_icon_only_profiles() -> None:
-    for path, expected_digest in PROFILE_IMAGE_SHA256.items():
-        digest = hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
-        if digest != expected_digest:
-            fail(f"{path} should be the approved icon-only profile image")
-
-
 def ensure_large_favicon_face() -> None:
     data = (ROOT / "assets/favicon-32.png").read_bytes()
-    # The face-only favicon should occupy enough of the 32px canvas to stay legible.
+    # The favicon should occupy enough of the 32px canvas to stay legible.
     # Minimal PNG parsing is intentionally avoided here; the approved asset hash
     # covers composition while png_size covers dimensions.
     digest = hashlib.sha256(data).hexdigest()
-    expected = "2bd3772c67846a09072260ee4ce045c0d1a32a844563ea8961acfa3c39383f5e"
+    expected = "2bb5419c7ef0d624070bcec42efddb3e35a7f32a864baea3ba3365a0cba837a3"
     if digest != expected:
-        fail("assets/favicon-32.png should be the approved large face-only favicon")
+        fail("assets/favicon-32.png should be the approved M favicon")
 
 
 def check_brand_icons(files: list[Path]) -> None:
     expected_sizes = {
         "assets/favicon-32.png": (32, 32),
         "assets/apple-touch-icon.png": (180, 180),
-        "assets/profile-github.png": (1024, 1024),
-        "assets/profile-youtube.png": (800, 800),
-        "assets/profile-icon.png": (1024, 1024),
     }
     for path, expected in expected_sizes.items():
         actual = png_size(path)
         if actual != expected:
             fail(f"{path} should be {expected[0]}x{expected[1]}, got {actual[0]}x{actual[1]}")
 
-    ensure_icon_only_profiles()
     ensure_large_favicon_face()
 
     ico = (ROOT / "favicon.ico").read_bytes()
@@ -243,6 +287,8 @@ def main() -> int:
 
     detail_pages = [
         read("pages/ai-edge-vision.html"),
+        read("pages/tdc-module.html"),
+        read("pages/cis-module.html"),
         read("pages/fpga-education-consulting.html"),
         read("pages/fpga-product-poc.html"),
         read("pages/zm4-module.html"),
@@ -279,33 +325,49 @@ def main() -> int:
         fail("static preview should not include a non-functional contact form")
 
     required_preview_snippets = [
-        "MADUINOS는 Camera, TDC, CIS 센서 입력을 FPGA/Zynq 기반 capture, timing, preprocessing 구조로 연결하는 기술을 개발합니다.",
-        "교육/컨설팅과 임베디드 제품 PoC는 지금 바로 제공하고",
-        "ZM4 FPGA SoM 기반 센서 처리 플랫폼은 개발 중입니다.",
-        "FPGA / Embedded / Edge AI / Hardware Prototyping",
-        "보편적인 기술 다이어그램",
-        "Camera / TDC / CIS",
-        "바로 제공 가능",
-        "개발 중인 ZM4 플랫폼",
-        "기술 검토 요청",
-        "1주 기술 진단",
-        "2~4주 센서 PoC",
+        "AI/FPGA 교육 및 영상/신호 모듈 제품",
+        "AI/FPGA 교육과 정밀 TDC, CIS 라인스캔, ZM4/ZM4MPSoC SoM 모듈을 제공합니다.",
+        "제품 라인",
+        "교육 및 강의",
+        "FPGA VOD 강의, 고객 맞춤형 교육, 고객 보드 Bring-Up",
+        "고객 맞춤형 교육",
+        "고객 보드 Bring-Up",
+        "Zynq / Zynq MPSoC",
+        "FPGA 기반 TDC 모듈",
+        "기본 16채널",
+        "다이나믹 동작 시 수십채널 가능",
+        "USB2.0",
+        "이더넷 100/1000Mbps",
+        "UART, CAN",
+        "CIS 기반 모듈",
+        "투표장치",
+        "CIS 기반 영상인식이 필요한 모든 고속 장치",
+        "ZM4/ZM4MPSoC SoM 모듈",
+        "Zynq7000/ZynqMPSoC",
+        "DDR3/DDR4L",
+        "zm4-zm4mpsoc-black-som-module.png",
+        "제품 이미지",
+        "기술 다이어그램",
+        "상세 스펙",
+        "어플리케이션 영역",
+        "pages/tdc-module.html",
+        "pages/cis-module.html",
+        "pages/zm4-module.html",
+        "pages/fpga-education-consulting.html",
+        "tdc-timing-applications.png",
+        "cis-application-markets.png",
         "문의 전 준비 자료",
-        "샘플 산출물",
+        "전체 다이어그램",
         'rel="canonical"',
         'property="og:title"',
         'name="twitter:card"',
-        "data-media-src",
-        "hero-media-image",
-        "hero-disciplines",
         "email-line",
-        "assets/tdc-cis-lab-system.png",
-        "technology-flow",
-        "상세 페이지",
-        "page-link-grid",
-        "pages/ai-edge-vision.html",
-        "pages/zm4-module.html",
-        "pages/fpga-product-poc.html",
+        "solution-nav",
+        "maduinos_wordmark_reference_clean.png",
+        "brand-logo",
+        "product-card-grid",
+        "product-line-grid",
+        "product-line-card",
     ]
     for snippet in required_preview_snippets:
         if snippet not in preview:
@@ -336,9 +398,41 @@ def main() -> int:
         "Compute Module",
         "drop-in replacement",
         "공식 Raspberry",
+        "한 화면",
+        ">선택<",
+        "선택하세요",
+        "바로 선택",
+        "Business Areas",
+        "사업 영역",
+        "사업영역",
+        'id="product-menu"',
+        "id='product-menu'",
+        'id="education"',
+        "id='education'",
+        'id="roadmap"',
+        "id='roadmap'",
+        "학습 로드맵",
+        "Education Roadmap",
+        "maduinos_wordmark.png",
+        "자료:",
     ]:
         if customer_hidden in preview:
             fail(f"customer-facing page should not expose: {customer_hidden}")
+
+    if 'class="business-model-card"' in preview or "business-model-grid" in preview:
+        fail("homepage should not have a separate business areas card grid")
+
+    if preview.count('class="product-line-card"') != 4:
+        fail("homepage should present exactly four equal product line cards including education")
+
+    if "solution-card featured" in preview or ".solution-card.featured" in css:
+        fail("product line should not visually promote one module over the other two")
+
+    for raw_p in re.findall(r"<p(?:\s[^>]*)?>(.*?)</p>", preview, flags=re.S):
+        text = re.sub(r"<[^>]+>", "", raw_p)
+        text = re.sub(r"\s+", " ", text).strip()
+        if len(text) > 185:
+            fail(f"homepage paragraph should stay concise for scanning: {text[:80]}...")
 
     for customer_hidden in [
         "CM4",
@@ -359,10 +453,13 @@ def main() -> int:
                 fail(f"public repository path should not expose old ZM4 positioning: {relative}")
 
     if "pages/fpga-education-consulting.html" not in preview:
-        fail("preview should link to the education/consulting detail page")
+        fail("preview should link to the education content detail page")
+    for link in ["pages/tdc-module.html", "pages/cis-module.html", "pages/zm4-module.html"]:
+        if link not in preview:
+            fail(f"preview should link directly to product detail page: {link}")
 
-    if "width: 250px" not in css:
-        fail("header logo should be enlarged for stronger brand presence")
+    if ".brand-logo" not in css or "width: 300px" not in css:
+        fail("header brand should use the larger clean MADUINOS wordmark image")
 
     if "var(--" not in css:
         fail("CSS should use design tokens via custom properties")
@@ -370,7 +467,7 @@ def main() -> int:
     if "word-break: keep-all" not in css:
         fail("CSS should prevent awkward Korean character-level wrapping")
 
-    for css_snippet in ["min-height: 760px"]:
+    for css_snippet in ["min-height: 760px", ".solution-nav", ".product-card-grid", ".product-line-grid"]:
         if css_snippet not in css:
             fail(f"CSS missing business overview styling: {css_snippet}")
 

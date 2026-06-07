@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MADUINOS의 Camera / TDC / CIS 센서 처리 기술 페이지입니다. Sensor Input, FPGA Capture, Processing, Host &amp; Validation 흐름으로 capture, timing, preprocessing, validation report를 정리합니다.">
-  <title>MADUINOS | Camera TDC CIS Sensor Processing</title>
+  <meta name="description" content="MADUINOS 센서 처리 기술 안내 페이지입니다. TDC 모듈, CIS 모듈, ZM4/ZM4MPSoC SoM 상세 페이지로 이동할 수 있습니다.">
+  <title>MADUINOS | Sensor Module Technology</title>
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/favicon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -15,19 +15,19 @@
     <div class="shell detail-hero-grid">
       <div>
         <a class="back-link" href="../index.html">MADUINOS</a>
-        <p class="eyebrow">Camera / TDC / CIS Sensor Processing</p>
+        <p class="eyebrow">Sensor Module Technology</p>
         <h1>
-          <span class="keep">센서 입력을</span><br>
-          <span class="keep">FPGA 처리 구조로</span><br>
-          <span class="keep">정리합니다.</span>
+          <span class="keep">센서 처리 기술은</span><br>
+          <span class="keep">TDC와 CIS 제품으로</span><br>
+          <span class="keep">정리됩니다.</span>
         </h1>
         <p class="lead">
-          Camera capture, TDC timing, CIS sensor processing은 서로 다른 기술처럼 보이지만
-          제품 안에서는 Sensor Input, FPGA Capture, Processing, Host &amp; Validation 흐름으로 검증됩니다.
+          기존 센서 처리 기술 페이지는 TDC 모듈과 CIS 모듈 상세 페이지로 분리되었습니다.
+          각 페이지에서 제품 이미지, 기술 다이어그램, 상세 스펙, 어플리케이션 영역을 확인할 수 있습니다.
         </p>
       </div>
       <div class="image-frame dark">
-        <img src="../assets/tdc-cis-lab-system.png" alt="FPGA sensor processing validation lab system for camera TDC and CIS">
+        <img src="../assets/tdc-cis-lab-system.png" alt="FPGA sensor module validation system">
       </div>
     </div>
   </header>
@@ -36,103 +36,14 @@
     <section class="detail-section">
       <div class="shell">
         <div class="section-head">
-          <p class="eyebrow">Technology Diagram</p>
-          <h2>보편적인 기술 다이어그램으로 고객 센서 조건을 설명합니다.</h2>
-          <p>
-            특정 완성 모듈을 과장하기보다, 입력부터 로그까지의 공통 구조를 먼저 보여줍니다.
-            이 구조 위에서 고객의 Target Specification을 확인합니다.
-          </p>
+          <p class="eyebrow">Module Pages</p>
+          <h2>센서 모듈 상세 페이지</h2>
         </div>
-        <div class="diagram technology-flow" aria-label="Generic Camera TDC CIS FPGA processing flow">
-          <div class="flow-node"><strong>Sensor Input</strong><span>Camera / TDC / CIS / Ultrasonic</span></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-node"><strong>FPGA Capture</strong><span>trigger · timestamp · line buffer · frame buffer</span></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-node"><strong>Processing</strong><span>preprocessing · calibration · histogram · feature</span></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-node"><strong>Host &amp; Validation</strong><span>host CLI · viewer · CSV log · validation report</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="detail-section alt">
-      <div class="shell">
-        <div class="section-head">
-          <p class="eyebrow">Core Blocks</p>
-          <h2>보유 기술은 세 가지 센서 처리 축으로 설명합니다.</h2>
-        </div>
-        <div class="outcome-grid">
-          <article class="outcome-card">
-            <h3>Camera capture</h3>
-            <p>frame input, ROI, buffer, preprocessing, result overlay를 FPGA/Zynq data path에 연결합니다.</p>
-          </article>
-          <article class="outcome-card">
-            <h3>TDC timing</h3>
-            <p>trigger, timestamp, histogram, timing capture log로 라이다, 초음파, 이벤트 시간을 검증합니다.</p>
-          </article>
-          <article class="outcome-card">
-            <h3>CIS sensor processing</h3>
-            <p>line sensor, 조명 timing, raw capture, calibration, recognition preprocessing 흐름을 구성합니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="detail-section">
-      <div class="shell split-media">
-        <div class="image-frame">
-          <img src="../assets/edge-ai-carrier-lab.png" alt="FPGA board and sensor setup for camera capture validation">
-        </div>
-        <div>
-          <p class="eyebrow">Validation Package</p>
-          <h2>결과는 화면보다 재현 가능한 로그와 자료로 남깁니다.</h2>
-          <p>
-            센서 처리 기술은 동작 영상만으로 판단하기 어렵습니다. MADUINOS는 입력 조건, register map,
-            CSV log, timing capture log, validation report를 함께 정리합니다.
-          </p>
-          <div class="spec-list">
-            <div><strong>Target Specification</strong><span>sensor, optical/timing condition, frame/event rate, latency target</span></div>
-            <div><strong>FPGA/Zynq data path</strong><span>custom IP, AXI-Lite register, buffer, firmware, host CLI</span></div>
-            <div><strong>Validation Output</strong><span>CSV log, viewer capture, timing capture log, validation report</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="detail-section alt">
-      <div class="shell">
-        <div class="section-head">
-          <p class="eyebrow">Scope</p>
-          <h2>적용 검토 범위</h2>
-        </div>
-        <div class="table-wrap">
-          <table class="spec-table">
-            <thead><tr><th>영역</th><th>확인하는 내용</th><th>산출물</th></tr></thead>
-            <tbody>
-              <tr><td>Sensor Input</td><td>Camera / TDC / CIS 입력 조건, trigger, frame/event 기준</td><td>Target Specification sheet</td></tr>
-              <tr><td>FPGA Capture</td><td>timestamp, line buffer, frame buffer, register access, self-test</td><td>architecture diagram, register map</td></tr>
-              <tr><td>Processing</td><td>preprocessing, calibration, histogram, feature extraction 후보</td><td>processing note, test vector</td></tr>
-              <tr><td>Host &amp; Validation</td><td>host CLI, viewer, CSV log, timing capture log, validation report</td><td>log package, next-step report</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="detail-section">
-      <div class="shell contact-layout">
-        <div>
-          <p class="eyebrow">Technology Contact</p>
-          <h2>센서 조건과 현재 로그부터 확인합니다.</h2>
-          <p>
-            Camera, TDC, CIS 중 어떤 입력인지, 사용 보드와 목표 성능이 무엇인지 알려주시면
-            기술 컨설팅 또는 임베디드 제품 PoC 범위로 나눠 제안합니다.
-          </p>
-        </div>
-        <div class="contact-card">
-          <strong>센서 처리 기술 문의</strong>
-          <div class="email-line">whjeong@maduinos.com</div>
-          <a class="button" href="mailto:whjeong@maduinos.com?subject=MADUINOS%20Sensor%20Processing%20문의">메일 보내기</a>
+        <div class="page-link-grid">
+          <a href="tdc-module.html">FPGA 기반 TDC 모듈</a>
+          <a href="cis-module.html">CIS 기반 모듈</a>
+          <a href="zm4-module.html">ZM4/ZM4MPSoC SoM 모듈</a>
+          <a href="fpga-education-consulting.html">교육 및 강의</a>
         </div>
       </div>
     </section>
