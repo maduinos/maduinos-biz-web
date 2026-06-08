@@ -4,7 +4,7 @@
 
 ## 현재 포지셔닝
 
-사이트의 중심 메시지는 `AI/FPGA 교육 및 영상/신호 모듈 제품`이다. 공개 홈은 `제품 라인` 4개를 짧은 카드 구조로 보여주고, 각 관심 영역은 상세 페이지로 연결한다.
+사이트의 브랜드 라인은 `FPGA & EMBEDDED SYSTEMS`이며, 중심 메시지는 `AI/FPGA 교육 및 영상/신호 모듈 제품`이다. 공개 홈은 `제품 라인` 4개를 짧은 카드 구조로 보여주고, 각 관심 영역은 상세 페이지로 연결한다.
 
 - `교육 및 강의`: `FPGA VOD 강의 목차`, `고객 맞춤형 교육`, `고객 보드 Bring-Up`, `Verilog HDL`, `Zynq / Zynq MPSoC`, `LVDS` 중심의 `레벨별 커리큘럼`.
 - `FPGA 기반 TDC 모듈`: 기본 16채널, 다이나믹 동작 시 수십채널 가능, USB2.0, 이더넷 100/1000Mbps, UART, CAN 기반 timing capture 모듈.
@@ -28,7 +28,7 @@
 - `assets/favicon-32.png`: PNG favicon
 - `assets/apple-touch-icon.png`: iOS 홈 화면용 아이콘
 - `assets/maduinos-biz.css`: 공통 스타일
-- `assets/maduinos_wordmark_reference_clean.png`: 홈 헤더용 MADUINOS 워드마크
+- `assets/maduinos_wordmark_reference_clean.png`: `FPGA & EMBEDDED SYSTEMS` 라인이 들어간 홈 헤더용 MADUINOS 워드마크
 - `assets/tdc-timing-applications.png`: TDC timing module 어플리케이션 이미지
 - `assets/cis-application-markets.png`: CIS 지폐계수기/투표장치/공장 라인스캔센서 어플리케이션 이미지
 - `assets/tdc-cis-lab-system.png`: TDC/CIS 센서 취득 개발 시스템 이미지

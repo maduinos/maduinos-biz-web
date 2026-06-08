@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CONTACT_EMAIL = "whjeong@maduinos.com"
 CUSTOM_DOMAIN = "biz.maduinos.com"
+BRAND_LINE = "FPGA & EMBEDDED SYSTEMS"
 REQUIRED_FILES = [
     "README.md",
     "CNAME",
@@ -35,6 +36,7 @@ REQUIRED_FILES = [
 ]
 
 REQUIRED_PUBLIC_TERMS = [
+    BRAND_LINE,
     "AI/FPGA 교육 및 영상/신호 모듈 제품",
     "교육 및 강의",
     "고객 맞춤형 교육",
@@ -107,6 +109,7 @@ FORBIDDEN_PUBLIC_LINKS = [
 ]
 
 FORBIDDEN_PUBLIC_PHRASES = [
+    "FPGA TRAINING & ENGINEERING",
     "고객이 이해하기 쉬운 6개 기술 사업축",
     "기술을 나열하지 않고",
     "먼저 내세우고",
@@ -325,6 +328,7 @@ def main() -> int:
         fail("static preview should not include a non-functional contact form")
 
     required_preview_snippets = [
+        BRAND_LINE,
         "AI/FPGA 교육 및 영상/신호 모듈 제품",
         "AI/FPGA 교육과 정밀 TDC, CIS 라인스캔, ZM4/ZM4MPSoC SoM 모듈을 제공합니다.",
         "제품 라인",
