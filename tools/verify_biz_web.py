@@ -462,7 +462,7 @@ def main() -> int:
         if link not in preview:
             fail(f"preview should link directly to product detail page: {link}")
 
-    if ".brand-logo" not in css or "width: 300px" not in css:
+    if ".brand-logo" not in css or "width: 380px" not in css or "max-width: 82vw" not in css:
         fail("header brand should use the larger clean MADUINOS wordmark image")
 
     if "var(--" not in css:
