@@ -17,16 +17,24 @@ REQUIRED_FILES = [
     "CNAME",
     "favicon.ico",
     "index.html",
+    "404.html",
+    "robots.txt",
+    "sitemap.xml",
     ".github/workflows/deploy-pages.yml",
     "assets/maduinos-biz.css",
     "assets/apple-touch-icon.png",
     "assets/favicon-32.png",
     "assets/maduinos_wordmark_reference_clean.png",
-    "assets/zm4-zm4mpsoc-black-som-module.png",
-    "assets/edge-ai-carrier-lab.png",
-    "assets/tdc-cis-lab-system.png",
-    "assets/tdc-timing-applications.png",
-    "assets/cis-application-markets.png",
+    "assets/zm4-zm4mpsoc-black-som-module.webp",
+    "assets/edge-ai-carrier-lab.webp",
+    "assets/tdc-cis-lab-system.webp",
+    "assets/tdc-timing-applications.webp",
+    "assets/cis-application-markets.webp",
+    "assets/og-home.jpg",
+    "assets/og-tdc.jpg",
+    "assets/og-cis.jpg",
+    "assets/og-zm4.jpg",
+    "assets/og-education.jpg",
     "pages/ai-edge-vision.html",
     "pages/tdc-module.html",
     "pages/cis-module.html",
@@ -184,7 +192,7 @@ REQUIRED_WORKFLOW_SNIPPETS = [
     "actions/upload-pages-artifact@v5.0.0",
     "actions/deploy-pages@v5.0.0",
     "python3 tools/verify_biz_web.py",
-    "cp -R assets pages index.html favicon.ico CNAME _site/",
+    "cp -R assets pages index.html 404.html favicon.ico CNAME robots.txt sitemap.xml _site/",
     "path: _site",
     "pages: write",
     "id-token: write",
@@ -349,7 +357,7 @@ def main() -> int:
         "ZM4/ZM4MPSoC SoM 모듈",
         "Zynq7000/ZynqMPSoC",
         "DDR3/DDR4L",
-        "zm4-zm4mpsoc-black-som-module.png",
+        "zm4-zm4mpsoc-black-som-module.webp",
         "제품 이미지",
         "기술 다이어그램",
         "상세 스펙",
@@ -358,8 +366,8 @@ def main() -> int:
         "pages/cis-module.html",
         "pages/zm4-module.html",
         "pages/fpga-education-consulting.html",
-        "tdc-timing-applications.png",
-        "cis-application-markets.png",
+        "tdc-timing-applications.webp",
+        "cis-application-markets.webp",
         "문의 전 준비 자료",
         "전체 다이어그램",
         'rel="canonical"',
@@ -474,6 +482,32 @@ def main() -> int:
     for css_snippet in ["min-height: 760px", ".solution-nav", ".product-card-grid", ".product-line-grid"]:
         if css_snippet not in css:
             fail(f"CSS missing business overview styling: {css_snippet}")
+
+    product_detail_paths = [
+        "pages/fpga-education-consulting.html",
+        "pages/tdc-module.html",
+        "pages/cis-module.html",
+        "pages/zm4-module.html",
+    ]
+    for path in product_detail_paths:
+        text = read(path)
+        for snippet in ['rel="canonical"', 'property="og:title"', 'property="og:image"', 'name="twitter:card"']:
+            if snippet not in text:
+                fail(f"{path} missing share/SEO metadata: {snippet}")
+        if f'href="https://biz.maduinos.com/{path}"' not in text:
+            fail(f"{path} canonical URL should match its public path")
+
+    for path in ["pages/ai-edge-vision.html", "pages/fpga-product-poc.html"]:
+        if 'name="robots" content="noindex' not in read(path):
+            fail(f"{path} legacy compatibility page should be noindex")
+
+    sitemap = read("sitemap.xml")
+    for url in ["https://biz.maduinos.com/", *[f"https://biz.maduinos.com/{p}" for p in product_detail_paths]]:
+        if f"<loc>{url}</loc>" not in sitemap:
+            fail(f"sitemap.xml missing url: {url}")
+
+    if "Sitemap: https://biz.maduinos.com/sitemap.xml" not in read("robots.txt"):
+        fail("robots.txt should point crawlers at sitemap.xml")
 
     files = html_files()
     check_brand_icons(files)

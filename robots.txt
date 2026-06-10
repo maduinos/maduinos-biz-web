@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://biz.maduinos.com/sitemap.xml
