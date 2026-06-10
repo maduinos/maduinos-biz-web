@@ -1083,6 +1083,17 @@ h3 {
   align-items: center;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+
+.footer-links a {
+  color: #dbe7f3;
+  font-size: 14px;
+}
+
 .detail-hero {
   padding: 86px 0 50px;
   color: #fff;
@@ -1420,6 +1431,10 @@ h3 {
     align-items: flex-start;
     flex-direction: column;
     padding: 12px 0;
+  }
+
+  .brand-logo {
+    max-width: 64vw;
   }
 
   .nav-links {

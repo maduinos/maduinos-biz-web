@@ -22,6 +22,9 @@
 ## 파일 구조
 
 - `index.html`: 메인 페이지
+- `404.html`: 존재하지 않는 경로 접근 시 제품 라인으로 안내하는 페이지
+- `robots.txt`: 크롤러 허용 및 sitemap 위치 안내
+- `sitemap.xml`: 공개 페이지 5개의 검색엔진용 sitemap
 - `.github/workflows/deploy-pages.yml`: GitHub Pages Actions 배포 워크플로
 - `CNAME`: 커스텀 도메인 `biz.maduinos.com`
 - `favicon.ico`: 브라우저 탭용 MADUINOS 아이콘
@@ -29,11 +32,12 @@
 - `assets/apple-touch-icon.png`: iOS 홈 화면용 아이콘
 - `assets/maduinos-biz.css`: 공통 스타일
 - `assets/maduinos_wordmark_reference_clean.png`: `FPGA & EMBEDDED SYSTEMS` 라인이 들어간 홈 헤더용 MADUINOS 워드마크
-- `assets/tdc-timing-applications.png`: TDC timing module 어플리케이션 이미지
-- `assets/cis-application-markets.png`: CIS 지폐계수기/투표장치/공장 라인스캔센서 어플리케이션 이미지
-- `assets/tdc-cis-lab-system.png`: TDC/CIS 센서 취득 개발 시스템 이미지
-- `assets/edge-ai-carrier-lab.png`: FPGA carrier 기반 교육/검증 이미지
-- `assets/zm4-zm4mpsoc-black-som-module.png`: ZM4/ZM4MPSoC 검은색 SoM 모듈 이미지
+- `assets/tdc-timing-applications.webp`: TDC timing module 어플리케이션 이미지
+- `assets/cis-application-markets.webp`: CIS 지폐계수기/투표장치/공장 라인스캔센서 어플리케이션 이미지
+- `assets/tdc-cis-lab-system.webp`: TDC/CIS 센서 취득 개발 시스템 이미지
+- `assets/edge-ai-carrier-lab.webp`: FPGA carrier 기반 교육/검증 이미지
+- `assets/zm4-zm4mpsoc-black-som-module.webp`: ZM4/ZM4MPSoC 검은색 SoM 모듈 이미지
+- `assets/og-home.jpg`, `assets/og-tdc.jpg`, `assets/og-cis.jpg`, `assets/og-zm4.jpg`, `assets/og-education.jpg`: 카카오톡/SNS 공유 카드용 1200x630 OG 이미지
 - `pages/fpga-education-consulting.html`: 교육 및 강의 상세 페이지
 - `pages/tdc-module.html`: FPGA 기반 TDC 모듈 상세 페이지
 - `pages/cis-module.html`: CIS 기반 모듈 상세 페이지
@@ -64,4 +68,4 @@
 python3 tools/verify_biz_web.py
 ```
 
-검증은 필수 파일, 공개 포지셔닝 문구, 내부 기획 문구 노출, 민감한 계획 문구 노출, 로컬 링크, GitHub Pages workflow, 한국어 줄바꿈 규칙을 확인한다.
+검증은 필수 파일, 공개 포지셔닝 문구, 내부 기획 문구 노출, 민감한 계획 문구 노출, 로컬 링크, GitHub Pages workflow, 한국어 줄바꿈 규칙, 상세 페이지 canonical/OG 메타데이터, sitemap/robots 구성을 확인한다.
