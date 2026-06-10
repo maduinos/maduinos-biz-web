@@ -1134,15 +1134,6 @@ h3 {
   grid-template-columns: minmax(0, 1fr) minmax(420px, 0.95fr);
 }
 
-.back-link {
-  display: inline-flex;
-  margin-bottom: 22px;
-  color: #a9f3e8;
-  font-size: 13px;
-  font-weight: 950;
-  text-transform: uppercase;
-}
-
 .image-frame {
   padding: 18px;
   border: 1px solid var(--line);
