@@ -28,7 +28,7 @@
 - `robots.txt`: 크롤러 허용 및 sitemap 위치 안내
 - `sitemap.xml`: 공개 페이지 5개의 검색엔진용 sitemap
 - `.github/workflows/deploy-pages.yml`: GitHub Pages Actions 배포 워크플로
-- `CNAME`: 커스텀 도메인 `biz.maduinos.com`
+- `CNAME`: 기본 커스텀 도메인 `maduinos.com`
 - `favicon.ico`: 브라우저 탭용 MADUINOS 아이콘
 - `assets/favicon-32.png`: PNG favicon
 - `assets/apple-touch-icon.png`: iOS 홈 화면용 아이콘
@@ -64,9 +64,10 @@
 ## 배포 방향
 
 1. GitHub 저장소 Settings > Pages에서 Source를 GitHub Actions로 설정한다.
-2. `main` 브랜치에 push하거나 Actions에서 `Deploy MADUINOS Biz Web to GitHub Pages`를 수동 실행한다.
-3. 워크플로는 `python3 tools/verify_biz_web.py`로 구조와 문구를 검증한 뒤 `_site` 디렉터리를 Pages artifact로 배포한다.
-4. 첫 화면은 artifact 최상위의 `index.html`이며, 상세 페이지는 `pages/*.html` 경로로 연결된다.
+2. GitHub Pages 커스텀 도메인은 `maduinos.com`을 기본 도메인으로 사용한다. 기존 `biz.maduinos.com`은 DNS 또는 리다이렉트 설정에서 별칭으로 유지한다.
+3. `main` 브랜치에 push하거나 Actions에서 `Deploy MADUINOS Biz Web to GitHub Pages`를 수동 실행한다.
+4. 워크플로는 `python3 tools/verify_biz_web.py`로 구조와 문구를 검증한 뒤 `_site` 디렉터리를 Pages artifact로 배포한다.
+5. 첫 화면은 artifact 최상위의 `index.html`이며, 상세 페이지는 `pages/*.html` 경로로 연결된다.
 
 ## 검증
 

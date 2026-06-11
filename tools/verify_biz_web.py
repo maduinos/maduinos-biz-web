@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTACT_EMAIL = "whjeong@maduinos.com"
-CUSTOM_DOMAIN = "biz.maduinos.com"
+CUSTOM_DOMAIN = "maduinos.com"
 BRAND_LINE = "FPGA & EMBEDDED SYSTEMS"
 REQUIRED_FILES = [
     "README.md",
@@ -494,7 +494,7 @@ def main() -> int:
         for snippet in ['rel="canonical"', 'property="og:title"', 'property="og:image"', 'name="twitter:card"']:
             if snippet not in text:
                 fail(f"{path} missing share/SEO metadata: {snippet}")
-        if f'href="https://biz.maduinos.com/{path}"' not in text:
+        if f'href="https://{CUSTOM_DOMAIN}/{path}"' not in text:
             fail(f"{path} canonical URL should match its public path")
 
     for path in ["pages/ai-edge-vision.html", "pages/fpga-product-poc.html"]:
@@ -502,11 +502,11 @@ def main() -> int:
             fail(f"{path} legacy compatibility page should be noindex")
 
     sitemap = read("sitemap.xml")
-    for url in ["https://biz.maduinos.com/", *[f"https://biz.maduinos.com/{p}" for p in product_detail_paths]]:
+    for url in [f"https://{CUSTOM_DOMAIN}/", *[f"https://{CUSTOM_DOMAIN}/{p}" for p in product_detail_paths]]:
         if f"<loc>{url}</loc>" not in sitemap:
             fail(f"sitemap.xml missing url: {url}")
 
-    if "Sitemap: https://biz.maduinos.com/sitemap.xml" not in read("robots.txt"):
+    if f"Sitemap: https://{CUSTOM_DOMAIN}/sitemap.xml" not in read("robots.txt"):
         fail("robots.txt should point crawlers at sitemap.xml")
 
     files = html_files()
