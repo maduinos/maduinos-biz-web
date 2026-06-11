@@ -1,5 +1,7 @@
 # MADUINOS Biz Web
 
+![MADUINOS · FPGA & EMBEDDED SYSTEMS](assets/maduinos-brand-banner.webp)
+
 `maduinos-biz-web`는 MADUINOS 공개 비즈니스 홈페이지를 배포하는 정적 웹 저장소다. GitHub Pages Actions가 검증을 실행한 뒤 `index.html`, `pages`, `assets`, `CNAME`을 `_site` artifact로 묶어 배포한다.
 
 ## 현재 포지셔닝
@@ -32,6 +34,10 @@
 - `assets/apple-touch-icon.png`: iOS 홈 화면용 아이콘
 - `assets/maduinos-biz.css`: 공통 스타일
 - `assets/maduinos_wordmark_reference_clean.png`: `FPGA & EMBEDDED SYSTEMS` 라인이 들어간 홈 헤더용 MADUINOS 워드마크
+- `assets/maduinos-brand-banner.webp`: 워드마크와 3D 마스코트가 들어간 README용 브랜드 배너
+- `assets/mascot-board-presenter.webp`: 메인 문의 섹션용 보드를 든 마스코트 이미지
+- `assets/mascot-presenting-hologram.webp`: 교육 상세 페이지 문의 섹션용 강의 마스코트 이미지
+- `assets/mascot-thinking.webp`: 404 페이지용 마스코트 이미지
 - `assets/tdc-timing-applications.webp`: TDC timing module 어플리케이션 이미지
 - `assets/cis-application-markets.webp`: CIS 지폐계수기/투표장치/공장 라인스캔센서 어플리케이션 이미지
 - `assets/tdc-cis-lab-system.webp`: TDC/CIS 센서 취득 개발 시스템 이미지
