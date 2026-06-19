@@ -240,9 +240,28 @@ def check_business_footer(files: list[Path]) -> None:
         text = html_file.read_text(encoding="utf-8")
         if 'class="business-info"' not in text:
             fail(f"{html_file.relative_to(ROOT)} missing business info footer")
+        if 'class="footer-links"' in text:
+            fail(f"{html_file.relative_to(ROOT)} footer should not include product/home shortcut links")
         for snippet in BUSINESS_FOOTER_SNIPPETS:
             if snippet not in text:
                 fail(f"{html_file.relative_to(ROOT)} missing business footer snippet: {snippet}")
+
+
+def check_contact_sections(files: list[Path]) -> None:
+    for html_file in files:
+        text = html_file.read_text(encoding="utf-8")
+        start = 0
+        while True:
+            start = text.find('class="shell contact-layout"', start)
+            if start == -1:
+                break
+            end = text.find("</section>", start)
+            if end == -1:
+                fail(f"{html_file.relative_to(ROOT)} has an unterminated contact section")
+            section = text[start:end]
+            if "<img " in section or "mascot" in section:
+                fail(f"{html_file.relative_to(ROOT)} contact section should not include character imagery")
+            start = end + len("</section>")
 
 
 def check_local_refs(files: list[Path]) -> None:
@@ -540,6 +559,7 @@ def main() -> int:
 
     files = html_files()
     check_business_footer(all_public_html_files())
+    check_contact_sections(files)
     check_brand_icons(files)
     check_local_refs(files)
 

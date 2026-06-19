@@ -35,8 +35,8 @@
 - `assets/maduinos-biz.css`: 공통 스타일
 - `assets/maduinos_wordmark_reference_clean.png`: `FPGA & EMBEDDED SYSTEMS` 라인이 들어간 홈 헤더용 MADUINOS 워드마크
 - `assets/maduinos-brand-banner.webp`: 워드마크와 3D 마스코트가 들어간 README용 브랜드 배너
-- `assets/mascot-board-presenter.webp`: 메인 문의 섹션용 보드를 든 마스코트 이미지
-- `assets/mascot-presenting-hologram.webp`: 교육 상세 페이지 문의 섹션용 강의 마스코트 이미지
+- `assets/mascot-board-presenter.webp`: 보드를 든 MADUINOS 마스코트 이미지
+- `assets/mascot-presenting-hologram.webp`: 회로 홀로그램을 설명하는 MADUINOS 마스코트 이미지
 - `assets/mascot-thinking.webp`: 404 페이지용 마스코트 이미지
 - `assets/tdc-timing-applications.webp`: TDC timing module 어플리케이션 이미지
 - `assets/cis-application-markets.webp`: CIS 지폐계수기/투표장치/공장 라인스캔센서 어플리케이션 이미지
