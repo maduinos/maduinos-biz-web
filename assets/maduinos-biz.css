@@ -1071,9 +1071,15 @@ h3 {
 }
 
 .site-footer {
-  padding: 30px 0;
+  padding: 30px 0 34px;
   color: #dbe7f3;
   background: var(--navy);
+}
+
+.footer-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .footer-row {
@@ -1081,6 +1087,14 @@ h3 {
   justify-content: space-between;
   gap: 18px;
   align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(219, 231, 243, 0.18);
+}
+
+.footer-brand {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 900;
 }
 
 .footer-links {
@@ -1092,6 +1106,21 @@ h3 {
 .footer-links a {
   color: #dbe7f3;
   font-size: 14px;
+}
+
+.business-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 20px;
+  margin: 0;
+  color: #b8c8d8;
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.business-info span {
+  min-width: 0;
 }
 
 .detail-hero {
@@ -1527,5 +1556,9 @@ h3 {
   .footer-row {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .business-info {
+    grid-template-columns: 1fr;
   }
 }

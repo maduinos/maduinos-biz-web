@@ -12,6 +12,14 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTACT_EMAIL = "whjeong@maduinos.com"
 CUSTOM_DOMAIN = "maduinos.com"
 BRAND_LINE = "FPGA & EMBEDDED SYSTEMS"
+BUSINESS_FOOTER_SNIPPETS = [
+    "상호: 매두이노",
+    "대표: 정우현",
+    "사업자등록번호: 740-29-01506",
+    "통신판매업신고번호: 제2024-용인기흥-3949호",
+    "업태: 정보통신업 · 종목: 미디어콘텐츠창작업",
+    "이메일: whjeong@maduinos.com",
+]
 REQUIRED_FILES = [
     "README.md",
     "CNAME",
@@ -101,6 +109,13 @@ FORBIDDEN_PRIVATE_TERMS = [
     "집 주소",
     "전화번호",
     "개인 이메일",
+    "생년월일",
+    "1983년 10월 25일",
+    "문서확인번호",
+    "덕영대로2077번길",
+    "204동 1904호",
+    "청현마을기흥데시앙",
+    "영덕동",
 ]
 
 REQUIRED_SECTIONS = [
@@ -214,6 +229,20 @@ def read(path: str) -> str:
 
 def html_files() -> list[Path]:
     return [ROOT / "index.html", *sorted((ROOT / "pages").glob("*.html"))]
+
+
+def all_public_html_files() -> list[Path]:
+    return [ROOT / "index.html", ROOT / "404.html", *sorted((ROOT / "pages").glob("*.html"))]
+
+
+def check_business_footer(files: list[Path]) -> None:
+    for html_file in files:
+        text = html_file.read_text(encoding="utf-8")
+        if 'class="business-info"' not in text:
+            fail(f"{html_file.relative_to(ROOT)} missing business info footer")
+        for snippet in BUSINESS_FOOTER_SNIPPETS:
+            if snippet not in text:
+                fail(f"{html_file.relative_to(ROOT)} missing business footer snippet: {snippet}")
 
 
 def check_local_refs(files: list[Path]) -> None:
@@ -510,6 +539,7 @@ def main() -> int:
         fail("robots.txt should point crawlers at sitemap.xml")
 
     files = html_files()
+    check_business_footer(all_public_html_files())
     check_brand_icons(files)
     check_local_refs(files)
 
