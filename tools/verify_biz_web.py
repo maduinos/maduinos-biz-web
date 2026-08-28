@@ -53,7 +53,7 @@ REQUIRED_FILES = [
 
 REQUIRED_PUBLIC_TERMS = [
     BRAND_LINE,
-    "AI/FPGA 교육 및 영상/신호 모듈 제품",
+    "FPGA 기반 고속 센서 시스템 개발",
     "교육 및 강의",
     "고객 맞춤형 교육",
     "고객 보드 Bring-Up",
@@ -385,8 +385,10 @@ def main() -> int:
 
     required_preview_snippets = [
         BRAND_LINE,
-        "AI/FPGA 교육 및 영상/신호 모듈 제품",
-        "AI/FPGA 교육과 정밀 TDC, CIS 라인스캔, ZM4/ZM4MPSoC SoM 모듈을 제공합니다.",
+        "FPGA 기반 고속 센서와",
+        "CIS 라인스캔, 정밀 타이밍 계측, Zynq/MPSoC 시스템의 아키텍처 설계",
+        "센서 입력부터 실시간 처리까지 연결합니다.",
+        "사양 확인부터 검증까지 단계적으로 진행합니다.",
         "제품 라인",
         "교육 및 강의",
         "FPGA VOD 강의, 고객 맞춤형 교육, 고객 보드 Bring-Up",
