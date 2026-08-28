@@ -83,14 +83,6 @@ REQUIRED_PUBLIC_TERMS = [
     "CIS 기반 영상인식이 필요한 모든 고속 장치",
     "R/G/B/IR/UV",
     "16us/line",
-    "ZM4/ZM4MPSoC SoM 모듈",
-    "Zynq7000 / ZynqMPSoC",
-    "DDR3/DDR4L",
-    "Cortex-A53 + Cortex-R5F class",
-    "32 MB QSPI Flash",
-    "48 PS MIO",
-    "100 FPGA I/O",
-    "고객 맞춤형 사양 가능",
     "제품 이미지",
     "기술 다이어그램",
     "상세 스펙",
@@ -404,13 +396,8 @@ def main() -> int:
         "CIS 기반 모듈",
         "투표장치",
         "CIS 기반 영상인식이 필요한 모든 고속 장치",
-        "ZM4/ZM4MPSoC SoM 모듈",
-        "Zynq7000/ZynqMPSoC",
-        "DDR3/DDR4L",
-        "zm4-zm4mpsoc-black-som-module.webp",
         "pages/tdc-module.html",
         "pages/cis-module.html",
-        "pages/zm4-module.html",
         "pages/fpga-education-consulting.html",
         "tdc-timing-applications.webp",
         "cis-application-markets.webp",
@@ -480,8 +467,8 @@ def main() -> int:
     if 'class="business-model-card"' in preview or "business-model-grid" in preview:
         fail("homepage should not have a separate business areas card grid")
 
-    if preview.count('class="product-line-card"') != 4:
-        fail("homepage should present exactly four equal product line cards including education")
+    if preview.count('class="product-line-card"') != 3:
+        fail("homepage should present exactly three public offering cards")
 
     if "solution-card featured" in preview or ".solution-card.featured" in css:
         fail("product line should not visually promote one module over the other two")
@@ -512,7 +499,7 @@ def main() -> int:
 
     if "pages/fpga-education-consulting.html" not in preview:
         fail("preview should link to the education content detail page")
-    for link in ["pages/tdc-module.html", "pages/cis-module.html", "pages/zm4-module.html"]:
+    for link in ["pages/tdc-module.html", "pages/cis-module.html"]:
         if link not in preview:
             fail(f"preview should link directly to product detail page: {link}")
 
@@ -533,7 +520,6 @@ def main() -> int:
         "pages/fpga-education-consulting.html",
         "pages/tdc-module.html",
         "pages/cis-module.html",
-        "pages/zm4-module.html",
     ]
     for path in product_detail_paths:
         text = read(path)
@@ -542,6 +528,11 @@ def main() -> int:
                 fail(f"{path} missing share/SEO metadata: {snippet}")
         if f'href="https://{CUSTOM_DOMAIN}/{path}"' not in text:
             fail(f"{path} canonical URL should match its public path")
+
+    if 'name="robots" content="noindex, nofollow"' not in read("pages/zm4-module.html"):
+        fail("unreleased ZM4 page should be noindex and nofollow")
+    if "pages/zm4-module.html" in preview:
+        fail("homepage should not link to the unreleased ZM4 page")
 
     for path in ["pages/ai-edge-vision.html", "pages/fpga-product-poc.html"]:
         if 'name="robots" content="noindex' not in read(path):
