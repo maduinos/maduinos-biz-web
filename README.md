@@ -6,19 +6,18 @@
 
 ## 현재 포지셔닝
 
-사이트의 브랜드 라인은 `FPGA & EMBEDDED SYSTEMS`이며, 중심 메시지는 `FPGA 기반 고속 센서 인터페이스와 실시간 데이터 처리 시스템 개발`이다. 공개 홈은 시스템 개발 역량과 진행 절차를 먼저 설명하고, 교육·TDC·CIS·ZM4/ZM4MPSoC 제품 라인을 상세 페이지로 연결한다.
+사이트의 브랜드 라인은 `FPGA & EMBEDDED SYSTEMS`이며, 중심 메시지는 `FPGA 기반 고속 센서 인터페이스와 실시간 데이터 처리 시스템 개발`이다. 공개 홈은 시스템 개발 역량과 진행 절차를 먼저 설명하고, 교육·TDC·CIS 공개 제공 영역을 상세 페이지로 연결한다.
 
 - `교육 및 강의`: `FPGA VOD 강의 목차`, `고객 맞춤형 교육`, `고객 보드 Bring-Up`, `Verilog HDL`, `Zynq / Zynq MPSoC`, `LVDS` 중심의 `레벨별 커리큘럼`.
 - `FPGA 기반 TDC 모듈`: 기본 16채널, 다이나믹 동작 시 수십채널 가능, USB2.0, 이더넷 100/1000Mbps, UART, CAN 기반 timing capture 모듈.
 - `CIS 기반 모듈`: `지폐계수기`, `투표장치`, `공장 라인스캔센서`, `CIS 기반 영상인식이 필요한 모든 고속 장치` 적용 시장과 line scan 기술.
-- `ZM4/ZM4MPSoC SoM 모듈`: Zynq7000/ZynqMPSoC, DDR3/DDR4L, QSPI Flash, 고객 맞춤형 사양 기반 모듈.
+- `Zynq/MPSoC 컨설팅·개발`: 완성 모듈 판매가 아닌 PS/PL 아키텍처, AXI·DMA·DDR 데이터 경로, 펌웨어 연동과 고객 보드 Bring-Up 지원.
 
 ## 콘텐츠 기준
 
 - 상세 페이지는 `제품 이미지`, `기술 다이어그램`, `상세 스펙`, `어플리케이션 영역` 순서로 구성한다.
 - TDC 상세 스펙은 `기본 16채널`, `다이나믹 동작 시 수십채널 가능`, `거리 분해능 4mm`, `최대 거리에 따라 가변`, `거리에 따라 가변 가능`, `USB2.0`, `이더넷 100/1000Mbps`, `UART, CAN`, `5V/12V/24V`, `0°C ~ 65°C`를 포함한다.
 - CIS 상세 스펙은 `R/G/B/IR/UV` 조명, scan width, dpi, `16us/line`, `LVDS` capture를 포함한다.
-- ZM4 상세 스펙은 `ZM4 / ZM4MPSoC`, `Zynq7000 / ZynqMPSoC`, `DDR3/DDR4L`, `32 MB QSPI Flash`, `48 PS MIO`, `100 FPGA I/O`, `0°C ~ 65°C`, `고객 맞춤형 사양 가능`을 포함한다.
 - 교육 상세는 `Verilog HDL`, `Zynq / Zynq MPSoC`, `Zynq7000 초급`, `Zynq7000 중급`, `Zynq7000 고급`, `LVDS`, `고객 보드 Bring-Up` 흐름으로 구성한다.
 
 ## 파일 구조
@@ -47,7 +46,7 @@
 - `pages/fpga-education-consulting.html`: 교육 및 강의 상세 페이지
 - `pages/tdc-module.html`: FPGA 기반 TDC 모듈 상세 페이지
 - `pages/cis-module.html`: CIS 기반 모듈 상세 페이지
-- `pages/zm4-module.html`: ZM4/ZM4MPSoC SoM 모듈 상세 페이지
+- `pages/zm4-module.html`: 미출시 ZM4 제품의 비공개 보존 페이지(`noindex`, 홈·sitemap 미노출)
 - `pages/ai-edge-vision.html`: 기존 URL 호환용 센서 모듈 안내 페이지
 - `pages/fpga-product-poc.html`: 기존 URL 호환용 제품 적용 문의 안내 페이지
 - `tools/verify_biz_web.py`: 구조, 문구, 링크, 배포 설정 검증 스크립트
@@ -56,7 +55,7 @@
 
 고객-facing HTML은 글 설명보다 제품 라인 카드, 이미지, 스펙 키워드를 먼저 보여준다.
 
-- 첫 화면에는 고속 센서 인터페이스, FPGA 데이터 파이프라인, Zynq/MPSoC 통합 역량을 먼저 제시하고 제품 라인을 직접 연결한다.
+- 첫 화면에는 고속 센서 인터페이스, FPGA 데이터 파이프라인, Zynq/MPSoC 통합 역량을 먼저 제시하고 실제 제공 가능한 교육·TDC·CIS 영역만 연결한다.
 - 각 제품 상세는 이미지와 다이어그램을 먼저 보여준 뒤 스펙과 적용 시장을 설명한다.
 - 문의 동선은 `whjeong@maduinos.com` 메일 주소로 유지한다.
 - 고객-facing HTML에는 배포 방식이나 내부 구현을 노출하지 않는다.
