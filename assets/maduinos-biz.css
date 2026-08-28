@@ -121,7 +121,7 @@ img { display: block; max-width: 100%; height: auto; }
   inset: 0;
   background-image:
     linear-gradient(90deg, rgba(8, 17, 31, 0.98) 0%, rgba(8, 17, 31, 0.92) 38%, rgba(8, 17, 31, 0.58) 76%),
-    url("tdc-cis-lab-system.png");
+    url("tdc-cis-lab-system.webp");
   background-size: cover;
   background-position: center;
 }
@@ -1549,5 +1549,37 @@ h3 {
 
   .business-info {
     grid-template-columns: 1fr;
+  }
+}
+
+
+/* Keyboard and motion accessibility */
+:focus-visible {
+  outline: 3px solid #0f766e;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 10px 14px;
+  color: #fff;
+  background: var(--navy);
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
