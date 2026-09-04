@@ -1,3 +1,7 @@
+> 만든 사람: maduinos<br>
+> 문서 만든 날짜: 2026-06-01<br>
+> https://maduinos.blogspot.com/
+
 # MADUINOS Biz Web
 
 ![MADUINOS · FPGA & EMBEDDED SYSTEMS](assets/maduinos-brand-banner.webp)
