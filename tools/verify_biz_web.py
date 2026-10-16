@@ -2,9 +2,12 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import re
 import sys
 import urllib.parse
+import urllib.robotparser
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 
@@ -47,13 +50,14 @@ REQUIRED_FILES = [
     "pages/tdc-module.html",
     "pages/cis-module.html",
     "pages/fpga-education-consulting.html",
+    "pages/fpga-outsourcing.html",
     "pages/fpga-product-poc.html",
     "pages/zm4-module.html",
 ]
 
 REQUIRED_PUBLIC_TERMS = [
     BRAND_LINE,
-    "FPGA 기반 고속 센서 시스템 개발",
+    "FPGA 외주 개발",
     "교육 및 강의",
     "고객 맞춤형 교육",
     "고객 보드 Bring-Up",
@@ -268,6 +272,72 @@ def check_local_refs(files: list[Path]) -> None:
                 fail(f"broken local reference in {html_file.relative_to(ROOT)}: {value}")
 
 
+def check_search_discovery(public_paths: list[str]) -> None:
+    try:
+        sitemap = ET.fromstring(read("sitemap.xml"))
+    except ET.ParseError:
+        fail("sitemap.xml should be valid XML")
+    urls = [node.text for node in sitemap.findall("{*}url/{*}loc")]
+    expected_urls = {f"https://{CUSTOM_DOMAIN}/", *[
+        f"https://{CUSTOM_DOMAIN}/{path}" for path in public_paths
+    ]}
+    if len(urls) != len(set(urls)) or set(urls) != expected_urls:
+        fail("sitemap.xml should contain each public canonical URL exactly once")
+
+    robots = urllib.robotparser.RobotFileParser()
+    robots.parse(read("robots.txt").splitlines())
+    for url in urls:
+        path = urllib.parse.urlsplit(url).path.lstrip("/") or "index.html"
+        text = read(path)
+        if re.search(r'<meta\b[^>]*name="robots"[^>]*content="[^"]*noindex', text, re.I):
+            fail(f"sitemap includes a noindex page: {path}")
+        for crawler in ["Googlebot", "Yeti"]:
+            if not robots.can_fetch(crawler, url):
+                fail(f"robots.txt blocks a public page for {crawler}")
+
+    path = "pages/fpga-outsourcing.html"
+    text = read(path)
+    url = f"https://{CUSTOM_DOMAIN}/{path}"
+    for tag in ["title", "h1"]:
+        match = re.search(rf"<{tag}\b[^>]*>(.*?)</{tag}>", text, re.S)
+        if not match or "FPGA 외주 개발" not in re.sub(r"<[^>]+>", "", match[1]):
+            fail(f"outsourcing page should describe its service in {tag}")
+    description = re.search(r'<meta name="description" content="([^"]+)"', text)
+    if not description or "FPGA 외주 개발" not in description[1]:
+        fail("outsourcing page should have a descriptive search snippet")
+    if f'property="og:url" content="{url}"' not in text:
+        fail("outsourcing OG URL should match its canonical URL")
+
+    nodes = []
+    for page in ["index.html", path]:
+        for raw in re.findall(r'<script type="application/ld\+json">(.*?)</script>', read(page), re.S):
+            try:
+                data = json.loads(raw)
+            except json.JSONDecodeError:
+                fail(f"invalid JSON-LD in {page}")
+            if data.get("@context") != "https://schema.org":
+                fail(f"JSON-LD should declare schema.org in {page}")
+            nodes.extend(data.get("@graph", [data]))
+    by_id = {node.get("@id"): node for node in nodes if node.get("@id")}
+    service = by_id.get(url + "#service", {})
+    webpage = by_id.get(url + "#webpage", {})
+    breadcrumb = by_id.get(url + "#breadcrumb", {})
+    provider_id = f"https://{CUSTOM_DOMAIN}/#organization"
+    if (service.get("@type") != "Service" or service.get("url") != url
+            or service.get("name") != "FPGA 외주 개발"
+            or service.get("provider", {}).get("@id") != provider_id
+            or by_id.get(provider_id, {}).get("@type") != "Organization"):
+        fail("outsourcing Service should identify its public URL and organization")
+    if (webpage.get("@type") != "WebPage" or webpage.get("url") != url
+            or webpage.get("mainEntity", {}).get("@id") != service.get("@id")):
+        fail("outsourcing WebPage should reference its Service")
+    items = breadcrumb.get("itemListElement", [])
+    if (breadcrumb.get("@type") != "BreadcrumbList" or len(items) != 2
+            or [item.get("position") for item in items] != [1, 2]
+            or [item.get("item") for item in items] != [f"https://{CUSTOM_DOMAIN}/", url]):
+        fail("outsourcing breadcrumbs should link the homepage and service URL")
+
+
 def png_size(path: str) -> tuple[int, int]:
     data = (ROOT / path).read_bytes()
     if data[:8] != b"\x89PNG\r\n\x1a\n":
@@ -341,6 +411,7 @@ def main() -> int:
         read("pages/tdc-module.html"),
         read("pages/cis-module.html"),
         read("pages/fpga-education-consulting.html"),
+        read("pages/fpga-outsourcing.html"),
         read("pages/fpga-product-poc.html"),
         read("pages/zm4-module.html"),
     ]
@@ -467,8 +538,10 @@ def main() -> int:
     if 'class="business-model-card"' in preview or "business-model-grid" in preview:
         fail("homepage should not have a separate business areas card grid")
 
-    if preview.count('class="product-line-card"') != 3:
-        fail("homepage should present exactly three public offering cards")
+    if preview.count('class="product-line-card"') != 4:
+        fail("homepage should present four public offerings including FPGA outsourcing")
+    if preview.count('href="pages/fpga-outsourcing.html"') < 3:
+        fail("homepage should link outsourcing from navigation, hero and offerings")
 
     if "solution-card featured" in preview or ".solution-card.featured" in css:
         fail("product line should not visually promote one module over the other two")
@@ -518,6 +591,7 @@ def main() -> int:
 
     product_detail_paths = [
         "pages/fpga-education-consulting.html",
+        "pages/fpga-outsourcing.html",
         "pages/tdc-module.html",
         "pages/cis-module.html",
     ]
@@ -545,6 +619,7 @@ def main() -> int:
 
     if f"Sitemap: https://{CUSTOM_DOMAIN}/sitemap.xml" not in read("robots.txt"):
         fail("robots.txt should point crawlers at sitemap.xml")
+    check_search_discovery(product_detail_paths)
 
     files = html_files()
     check_business_footer(all_public_html_files())

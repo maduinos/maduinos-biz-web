@@ -10,8 +10,9 @@
 
 ## 현재 포지셔닝
 
-사이트의 브랜드 라인은 `FPGA & EMBEDDED SYSTEMS`이며, 중심 메시지는 `FPGA 기반 고속 센서 인터페이스와 실시간 데이터 처리 시스템 개발`이다. 공개 홈은 시스템 개발 역량과 진행 절차를 먼저 설명하고, 교육·TDC·CIS 공개 제공 영역을 상세 페이지로 연결한다.
+사이트의 브랜드 라인은 `FPGA & EMBEDDED SYSTEMS`이며, 중심 메시지는 `FPGA 기반 고속 센서 인터페이스와 실시간 데이터 처리 시스템 개발`이다. 공개 홈은 시스템 개발 역량과 진행 절차를 먼저 설명하고, FPGA 외주 개발·교육·TDC·CIS 공개 제공 영역을 상세 페이지로 연결한다.
 
+- `FPGA 외주 개발`: Verilog/SystemVerilog RTL, FPGA IP, Zynq/MPSoC, AXI·DMA·DDR, 센서 인터페이스와 고객 보드 Bring-Up·검증을 범위 협의 후 제공.
 - `교육 및 강의`: `FPGA VOD 강의 목차`, `고객 맞춤형 교육`, `고객 보드 Bring-Up`, `Verilog HDL`, `Zynq / Zynq MPSoC`, `LVDS` 중심의 `레벨별 커리큘럼`.
 - `FPGA 기반 TDC 모듈`: 기본 16채널, 다이나믹 동작 시 수십채널 가능, USB2.0, 이더넷 100/1000Mbps, UART, CAN 기반 timing capture 모듈.
 - `CIS 기반 모듈`: `지폐계수기`, `투표장치`, `공장 라인스캔센서`, `CIS 기반 영상인식이 필요한 모든 고속 장치` 적용 시장과 line scan 기술.
@@ -29,7 +30,7 @@
 - `index.html`: 메인 페이지
 - `404.html`: 존재하지 않는 경로 접근 시 제품 라인으로 안내하는 페이지
 - `robots.txt`: 크롤러 허용 및 sitemap 위치 안내
-- `sitemap.xml`: 공개 페이지 5개의 검색엔진용 sitemap
+- `sitemap.xml`: 공개 페이지 5개(홈·외주 개발·교육·TDC·CIS)의 검색엔진용 sitemap
 - `.github/workflows/deploy-pages.yml`: GitHub Pages Actions 배포 워크플로
 - `CNAME`: 기본 커스텀 도메인 `maduinos.com`
 - `favicon.ico`: 브라우저 탭용 MADUINOS 아이콘
@@ -47,6 +48,7 @@
 - `assets/edge-ai-carrier-lab.webp`: FPGA carrier 기반 교육/검증 이미지
 - `assets/zm4-zm4mpsoc-black-som-module.webp`: ZM4/ZM4MPSoC 검은색 SoM 모듈 이미지
 - `assets/og-home.jpg`, `assets/og-tdc.jpg`, `assets/og-cis.jpg`, `assets/og-zm4.jpg`, `assets/og-education.jpg`: 카카오톡/SNS 공유 카드용 1200x630 OG 이미지
+- `pages/fpga-outsourcing.html`: FPGA 외주 개발·설계 용역 범위, 산출물, 절차와 상담 안내
 - `pages/fpga-education-consulting.html`: 교육 및 강의 상세 페이지
 - `pages/tdc-module.html`: FPGA 기반 TDC 모듈 상세 페이지
 - `pages/cis-module.html`: CIS 기반 모듈 상세 페이지
@@ -59,7 +61,7 @@
 
 고객-facing HTML은 글 설명보다 제품 라인 카드, 이미지, 스펙 키워드를 먼저 보여준다.
 
-- 첫 화면에는 고속 센서 인터페이스, FPGA 데이터 파이프라인, Zynq/MPSoC 통합 역량을 먼저 제시하고 실제 제공 가능한 교육·TDC·CIS 영역만 연결한다.
+- 첫 화면에는 고속 센서 인터페이스, FPGA 데이터 파이프라인, Zynq/MPSoC 통합 역량을 먼저 제시하고 실제 제공 가능한 FPGA 외주 개발·교육·TDC·CIS 영역으로 연결한다.
 - 각 제품 상세는 이미지와 다이어그램을 먼저 보여준 뒤 스펙과 적용 시장을 설명한다.
 - 문의 동선은 `whjeong@maduinos.com` 메일 주소로 유지한다.
 - 고객-facing HTML에는 배포 방식이나 내부 구현을 노출하지 않는다.
@@ -79,3 +81,12 @@ python3 tools/verify_biz_web.py
 ```
 
 검증은 필수 파일, 공개 포지셔닝 문구, 내부 기획 문구 노출, 민감한 계획 문구 노출, 로컬 링크, GitHub Pages workflow, 한국어 줄바꿈 규칙, 상세 페이지 canonical/OG 메타데이터, sitemap/robots 구성을 확인한다.
+
+## 검색 수집 관리
+
+- 외주 개발의 검색 대상 URL은 `https://maduinos.com/pages/fpga-outsourcing.html`이다.
+- 홈의 메뉴·첫 화면·서비스 카드에서 전용 페이지로 연결한다. 제목, 설명, canonical, OG와 `Service`·`WebPage`·`BreadcrumbList` JSON-LD가 본문의 서비스 내용과 일치하도록 유지한다.
+- `robots.txt`는 수집을 허용하고 사이트맵 위치를 안내한다. `sitemap.xml`에는 공개 페이지의 canonical URL만 넣고, `lastmod`는 실제 콘텐츠 변경일에 맞춘다. 미출시 페이지와 호환 URL의 `noindex` 정책은 유지한다.
+- 배포 후 [Google Search Console](https://search.google.com/search-console)과 [네이버 서치어드바이저](https://searchadvisor.naver.com/)에서 소유권이 확인된 사이트에 `https://maduinos.com/sitemap.xml`을 제출하고 외주 개발 URL의 색인·수집 상태를 확인한다. 필요한 경우 URL 검사/웹 페이지 수집 요청을 사용한다.
+- 소유권 확인 코드는 각 관리 도구가 발급한 값만 사용한다. 정적 페이지와 사이트맵 배포만으로 관리 도구의 등록·제출이 완료되는 것은 아니다.
+- 실제 검색 반영과 순위는 검색엔진이 결정한다. [Google 사이트맵 안내](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)와 [네이버 수집 요청 안내](https://searchadvisor.naver.com/guide/request-crawl)를 참고한다.
